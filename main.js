@@ -43,6 +43,8 @@ client.on('message', message => {
         client.commands.get('mute').execute(message, args, Discord);
     } else if (command == 'unmute') {
         client.commands.get('unmute').execute(message, args, Discord);
+    } else if (command == 'dm') {
+        client.commands.get('dm').execute(message, args, Discord);
     }
 });
 
