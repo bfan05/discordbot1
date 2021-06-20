@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-const prefix = 'sig';
+const prefix = '-';
 
 const fs = require('fs');
 
