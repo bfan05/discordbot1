@@ -37,6 +37,8 @@ client.on('message', message => {
         client.commands.get('spam').execute(message, args, Discord);
     } else if (command == 'dm') {
         client.commands.get('dm').execute(message, args, Discord);
+    } else if (command == 'roll') {
+        client.commands.get('roll').execute(message, args, Discord);
     }
 });
 
