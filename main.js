@@ -41,6 +41,8 @@ client.on('message', message => {
         client.commands.get('spam').execute(message, args, Discord);
     } else if (command == 'mute') {
         client.commands.get('mute').execute(message, args, Discord);
+    } else if (command == 'unmute') {
+        client.commands.get('unmute').execute(message, args, Discord);
     }
 });
 
