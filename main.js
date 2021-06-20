@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
-
 const client = new Discord.Client();
-
+const mongoose = require('mongoose');
 const prefix = '-';
 
 const fs = require('fs');
@@ -40,6 +39,8 @@ client.on('message', message => {
         client.commands.get('ban').execute(message, args, Discord);
     } else if(command == 'spam') {
         client.commands.get('spam').execute(message, args, Discord);
+    } else if (command == 'mute') {
+        client.commands.get('mute').execute(message, args, Discord);
     }
 });
 
