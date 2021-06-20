@@ -8,6 +8,7 @@ module.exports = {
             let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
 
             let memberTarget = message.guild.members.cache.get(target.id);
+            
             memberTarget.roles.remove(mainRole.id);
             memberTarget.roles.add(muteRole.id);
             message.channel.send(`<@${memberTarget.user.id}> has been muted`);
