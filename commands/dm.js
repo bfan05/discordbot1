@@ -16,7 +16,7 @@ module.exports = {
                 msg += " " + args[i + 1];
                 ++i;
             }
-            memberTarget.send(msg);
+            for (let j = 0; j < args[1]; ++j) memberTarget.send(msg);
         } else {
             message.channel.send("please specify what you want to dm!");
         }
