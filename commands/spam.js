@@ -7,6 +7,6 @@ module.exports = {
         if (args[0] > 100) return message.reply("you cannot spam more than 100 messages!");
         if (args[0] < 1) return message.reply("you must spam at least one message!");
         for (let i = 0; i < args[0]; ++i) message.channel.send("spam");
-        message.channel.send("spam complete!");
+        message.channel.send('<:spam:829844866946957343>');
     }
 }
