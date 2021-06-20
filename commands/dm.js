@@ -4,10 +4,10 @@ module.exports = {
     execute(message, args) {
         const member = message.mentions.users.first();
         const memberTarget = message.guild.members.cache.get(member.id);
-        if (args[2]) {
+        if (args[1]) {
             memberTarget.send(args[2]);
         } else {
-            member.channel.send("please specify what you want to dm!");
+            message.channel.send("please specify what you want to dm!");
         }
     }
 }
