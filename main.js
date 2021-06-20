@@ -33,16 +33,8 @@ client.on('message', message => {
         client.commands.get('ping').execute(message, args, Discord);
     } else if(command == 'clear') {
         client.commands.get('clear').execute(message, args, Discord);
-    } else if(command == 'kick') {
-        client.commands.get('kick').execute(message, args, Discord);
-    } else if(command == 'ban') {
-        client.commands.get('ban').execute(message, args, Discord);
     } else if(command == 'spam') {
         client.commands.get('spam').execute(message, args, Discord);
-    } else if (command == 'mute') {
-        client.commands.get('mute').execute(message, args, Discord);
-    } else if (command == 'unmute') {
-        client.commands.get('unmute').execute(message, args, Discord);
     } else if (command == 'dm') {
         client.commands.get('dm').execute(message, args, Discord);
     }
