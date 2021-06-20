@@ -15,7 +15,7 @@ for(const file of commandFiles) {
 }
 
 client.once('ready', () => {
-    console.log('FirstBot is online!');
+    console.log('SigmaBot is online!');
 });
 
 client.on('message', message => {
