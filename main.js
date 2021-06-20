@@ -30,6 +30,8 @@ client.on('message', message => {
         client.commands.get('invite').execute(message, args, Discord);
     } else if(command == 'coinflip') {
         client.commands.get('coinflip').execute(message, args, Discord);
+    } else if(command == 'ping') {
+        client.commands.get('ping').execute(message, args, Discord);
     } 
 });
 
