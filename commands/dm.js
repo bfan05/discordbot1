@@ -17,9 +17,9 @@ module.exports = {
                 ++i;
             }
             for (let j = 0; j < args[1]; ++j) memberTarget.send(msg);
+            message.channel.send('dm complete!');
         } else {
             return message.channel.send("please specify what you want to dm!");
         }
-        message.channel.send('dm complete!');
     }
 }
