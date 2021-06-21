@@ -1,7 +1,7 @@
 module.exports = {
     name: 'dm',
     description: 'this command dms a member',
-    execute(message, args) {
+    execute(client, message, args, Discord) {
         const member = message.mentions.users.first();
         const memberTarget = message.guild.members.cache.get(member.id);
         if (!member) message.channel.send("i could not find that member!");

@@ -1,7 +1,7 @@
 module.exports = {
     name: 'invite',
     description: 'Sends invite link.',
-    execute(message, args, Discord) {
+    execute(client, message, args, Discord) {
         const newEmbed = new Discord.MessageEmbed()
         .setColor('#9CCFE7')
         .setTitle('FirstBot Invite Link')

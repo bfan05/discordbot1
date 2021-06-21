@@ -1,7 +1,7 @@
 module.exports = {
     name: 'clear',
     description: 'clear messages',
-    async execute(message, args, Discord) {
+    async execute(client, message, args, Discord) {
         if (!args[0]) return message.reply("please specify the amount of messages you want to clear!");
         if (isNaN(args[0])) return message.reply("please enter a real number!");
         if (args[0] > 100) return message.reply("you cannot delete more than 100 messages!");
