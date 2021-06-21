@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
-const mongoose = require('mongoose');
+const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTION"]});
 const prefix = '-';
 
 const fs = require('fs');
@@ -45,6 +44,8 @@ client.on('message', message => {
         client.commands.get('dm').execute(message, args, Discord);
     } else if (command == 'roll') {
         client.commands.get('roll').execute(message, args, Discord);
+    } else if (command == 'reactionrole') {
+        client.commands.get('reactionrole').execute(message, args, Discord, client);
     }
 });
 
