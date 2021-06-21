@@ -17,6 +17,12 @@ client.once('ready', () => {
     console.log('SigmaBot is online!');
 });
 
+client.on('guildMemberAdd', guildMember => {
+    let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === 'Member');
+    guildMember.roles.add(welcomeRole);
+    guildMember.guild.channels.cache.get('856397188913299506').send(`welcome <@{guildMember.user.id}> to bruhphastars!`);
+});
+
 client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
