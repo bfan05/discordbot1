@@ -9,7 +9,7 @@ module.exports = {
         const reaperEmoji = '◼️';
         const greedControlEmoji = '🟥';
 
-        const newEmbed = new Discord.MessageEmbed()
+        let embed = new Discord.MessageEmbed()
             .setColor('#9CCFE7')
             .setTitle('First Reaction Role!')
             .setDescription("Choose the reaper or greed control role!\n\n"
