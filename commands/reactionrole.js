@@ -6,7 +6,7 @@ module.exports = {
         const reaperRole = message.guild.roles.cache.find(role => role.name === 'reaper');
         const greedControlRole = message.guild.roles.cache.find(role => role.name === 'greed control');
 
-        const reaperEmoji = '◼️';
+        const reaperEmoji = '🟦';
         const greedControlEmoji = '🟥';
 
         let embed = new Discord.MessageEmbed()
