@@ -6,7 +6,17 @@ module.exports = {
         if (isNaN(args[0])) return message.reply("please enter a real number!");
         if (args[0] > 100) return message.reply("you cannot spam more than 100 messages!");
         if (args[0] < 1) return message.reply("you must spam at least one message!");
-        for (let i = 0; i < args[0]; ++i) message.channel.send("<:spam:856057681231085578>");
+        if (args[1]) {
+            let msg = args[1];
+            let i = 1;
+            while (args[i + 1]) {
+                msg += " " + args[i + 1];
+                ++i;
+            }
+            for (let j = 0; j < args[0]; ++j) message.channel.send(msg);
+        } else {
+            return message.channel.send("please specify what you want to spam!");
+        }
         message.channel.send('spam complete!');
     }
 }
