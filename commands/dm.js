@@ -18,7 +18,8 @@ module.exports = {
             }
             for (let j = 0; j < args[1]; ++j) memberTarget.send(msg);
         } else {
-            message.channel.send("please specify what you want to dm!");
+            return message.channel.send("please specify what you want to dm!");
         }
+        message.channel.send('dm complete!');
     }
 }
