@@ -28,12 +28,12 @@ module.exports = {
 
         let flip = randomNumber(1, 101);
         if (flip == 1) {
-            message.channel.send(`${message.author.username} bet **${bet.toLocaleString()}**... 🪙 **|** the coin lands on its **side**! You won **${bet}** TMC Cash!`);
+            message.channel.send(`${message.author.username} bet **${bet.toLocaleString()}**... 🪙 **|** the coin lands on its **side**! You won **${bet.toLocaleString()}** TMC Cash!`);
         }
         else if(flip % 2 == 0) {
             if (args[1] == 'heads' || args[1] == 'h') {
                 update = bet;
-                message.channel.send(`${message.author.username} bet **${bet.toLocaleString()}** and chose heads... 🪙 **|** the coin lands on **heads**! You won **${2 * bet}** TMC Cash!`);
+                message.channel.send(`${message.author.username} bet **${bet.toLocaleString()}** and chose heads... 🪙 **|** the coin lands on **heads**! You won **${(2 * bet).toLocaleString()}** TMC Cash!`);
             }
             else {
                 update = -bet;
@@ -43,7 +43,7 @@ module.exports = {
         else {
             if (args[1] == 'tails' || args[1] == 't') {
                 update = bet;
-                message.channel.send(`${message.author.username} bet **${bet.toLocaleString()}** and chose tails... 🪙 **|** the coin lands on **tails**! You won **${2 * bet}** TMC Cash!`);
+                message.channel.send(`${message.author.username} bet **${bet.toLocaleString()}** and chose tails... 🪙 **|** the coin lands on **tails**! You won **${(2 * bet).toLocaleString()}** TMC Cash!`);
             }
             else {
                 update = -bet;
