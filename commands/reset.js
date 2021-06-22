@@ -8,6 +8,9 @@ module.exports = {
     async execute(client, message, args, Discord, profileData) {
         if (!args.length) return message.channel.send('You need to mention a member to reset their TMC Cash!');
         const data = await profileModel.findOne({ userID: message.author.id });
+        
+        const target = message.mentions.users.first();
+        if (!target) return message.channel.send("That user does not exist!");
 
         const targetData = await profileModel.findOne({ userID: target.id });
         if (!targetData) return message.channel.send(`This user doesn't exist in the database. Tell him or her to use the -join command!`);
