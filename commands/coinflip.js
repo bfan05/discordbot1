@@ -17,7 +17,8 @@ module.exports = {
         if (args[0] > data.coins) return message.reply("You don't have enough TMC Cash, silly!");
         if (args[0] < 0) return message.reply("You must gamble a positive amount, silly!");
 
-        if (!args[1] || (args[1] != 'heads' && args[1] != 'tails')) return message.reply('You must choose heads or tails!');
+        if (!args[1] || (args[1] != 'heads' && args[1] != 'h'
+        && args[1] != 'tails' && args[1] != 't')) return message.reply('You must choose heads or tails!');
         let update = 0;
 
         let flip = randomNumber(1, 101);
@@ -25,7 +26,7 @@ module.exports = {
             message.channel.send(`${message.author.username} bet ${args[0]}... 🪙 **|** the coin lands on its **side**! You won ${args[0]} TMC Cash!`);
         }
         else if(flip % 2 == 0) {
-            if (args[1] == 'heads') {
+            if (args[1] == 'heads' || args[1] == 'h') {
                 update = args[0];
                 message.channel.send(`${message.author.username} bet ${args[0]}... 🪙 **|** the coin lands on **heads**! You won ${2 * args[0]} TMC Cash!`);
             }
@@ -35,7 +36,7 @@ module.exports = {
             }
         }
         else {
-            if (args[1] == 'tails') {
+            if (args[1] == 'tails' || args[1] == 't') {
                 update = args[0];
                 message.channel.send(`${message.author.username} bet ${args[0]}... 🪙 **|** the coin lands on **tails**! You won ${2 * args[0]} TMC Cash!`);
             }
