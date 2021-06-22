@@ -5,7 +5,7 @@ module.exports = {
   permissions: [],
   description: "Give a player some TMC Cash!",
   async execute(message, args, client, Discord, profileData) {
-    if (!args.length) return message.channel.send("You need to mention a player to give them TMC Cash!");
+    //if (!args.length) return message.channel.send("You need to mention a player to give them TMC Cash!");
 
     if (!args[1]) return message.channel.send('Please specify how much you want to give!');
     if (isNaN(args[1])) return message.reply("Please enter a real number!");
