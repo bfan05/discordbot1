@@ -4,7 +4,7 @@ module.exports = {
     execute(client, message, args, Discord, profileData) {
         const newEmbed = new Discord.MessageEmbed()
         .setColor('#9CCFE7')
-        .setAuthor(`**${message.author.username}**'s TMC Cash`, `${message.author.avatarURL}`)
+        .setAuthor(`**${message.author.username}**'s TMC Cash`)
         .addFields(
             {name: 'Wallet:', value: `${profileData.coins} 𝕋`},
             {name: 'Bank:', value: `${profileData.bank} 𝕋`},
