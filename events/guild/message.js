@@ -11,8 +11,8 @@ module.exports = async (Discord, client, message) => {
             let profile = await profileModel.create({
                 userID: message.author.id,
                 serverID: message.guild.id,
-                coins: 1000,
-                bank: 0,
+                coins: 0,
+                total: 0,
             });
             profile.save();
         }
@@ -23,7 +23,7 @@ module.exports = async (Discord, client, message) => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const cmd = args.shift().toLowerCase();
     
-    const command = client.commands.get(cmd);
+    const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 
     try {
         command.execute(client, message, args, Discord, profileData);

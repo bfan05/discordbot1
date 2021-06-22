@@ -4,8 +4,8 @@ module.exports = async(Discord, client, guildMember) => {
     let profile = await profileModel.create({
         userID: guildMember.id,
         serverID: guildMember.guild.id,
-        coins: 1000,
-        bank: 0,
+        coins: 0,
+        total: 0,
     });
     profile.save();
     let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === 'Member');
