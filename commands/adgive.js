@@ -1,17 +1,16 @@
 const profileModel = require("../models/profileSchema");
 
 module.exports = {
-    name: 'give',
+    name: 'adgive',
     aliases: [],
-    permissions: [],
-    description: 'Give a friend some TMC Cash!',
+    permissions: ["ADMINISTRATOR"],
+    description: 'Admins, give a member some TMC Cash!',
     async execute(client, message, args, Discord, profileData) {
         if (!args.length) return message.channel.send('You need to mention a member to give them TMC Cash!');
         const data = await profileModel.findOne({ userID: message.author.id });
 
         if (!args[1]) return message.channel.send('Please specify how much you want to give!');
         if (isNaN(args[1])) return message.channel.send("Please enter a real number!");
-        if (args[1] > data.coins) return message.channel.send("You don't have enough, silly!")
         if (args[1] <= 0) return message.channel.send("You must give a positive amount, silly!");
 
         const amount = Math.floor(args[1]);
@@ -32,16 +31,6 @@ module.exports = {
                 },
             }
         );
-        const response = await profileModel.findOneAndUpdate(
-            {
-                userID: message.author.id,
-            }, 
-            {
-                $inc: {
-                    coins: -amount,
-                },
-            }
-        );
-        message.channel.send(`**${message.author.username}** sent **${amount}** TMC Cash to **${target.username}**!`);
+        message.channel.send(`**${target.username}** gained **${amount}** TMC Cash!`);
     }
 }
