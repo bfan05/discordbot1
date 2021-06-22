@@ -8,6 +8,7 @@ module.exports = {
         .setColor('#9CCFE7')
         .setTitle('TMC Bot Help')
         .setDescription("Below are commands and how to use them!")
+        .setThumbnail('http://www.simpleimageresizer.com/_uploads/photos/fd03d8aa/tmc_2_15.gif')
         .addFields(
             {name: '-join', value: 'Join the bot! Using this command will get you on your way to becoming rich!'},
             {name: '-give @[member] [amount]', value: 'Give another member some of your TMC Cash!'},
@@ -17,8 +18,7 @@ module.exports = {
             {name: '-adgive @[member] [amount]', value: 'Only for admins! Reward someone with TMC Cash.'},
             {name: 'reset @[member]', value: 'Someone has been naughty! Reset their cash.'}
         )
-        .setImage('https://cdn.discordapp.com/emojis/747124075247173633.png?v=1')
-        .setFooter('Make sure to check out the rules channel');
+        .setFooter('Created by bfan#0125');
 
         message.channel.send(newEmbed);
     }
