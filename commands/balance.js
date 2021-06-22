@@ -9,8 +9,8 @@ module.exports = {
         .setAuthor(`${message.author.username}'s TMC Cash`, `${message.author.avatarURL({dynamic: true})}`)
         .setThumbnail('http://www.simpleimageresizer.com/_uploads/photos/fd03d8aa/tmc_2_15.gif')
         .addFields(
-            {name: 'Wallet:', value: `${profileData.coins} 𝕋`},
-            {name: 'Total (all time):', value: `${profileData.total} 𝕋`},
+            {name: 'Wallet:', value: `${profileData.coins.toLocaleString} 𝕋`},
+            {name: 'Total (all time):', value: `${profileData.total.toLocaleString} 𝕋`},
         )
         .setFooter('Created by bfan#0125')
 

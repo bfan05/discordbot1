@@ -31,6 +31,6 @@ module.exports = {
                 },
             }
         );
-        message.channel.send(`**${target.username}** gained **${amount}** TMC Cash!`);
+        message.channel.send(`**${target.username}** gained **${amount.toLocaleString}** TMC Cash!`);
     }
 }
