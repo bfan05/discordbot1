@@ -59,6 +59,22 @@ module.exports = async (Discord, client, message) => {
         "MANAGE_EMOJIS",
     ]
 
+    if (command.permissions.length) {
+        let invalidPerms = [];
+        for (const perm of command.permissions) {
+            if (!validPermissions.includes(perm)) {
+                return console.log(`Invalid Perm ${perm}`)
+            }
+            if (!message.member.hasPermission(perm)) {
+                invalidPerms.push(perm);
+                break;
+            }
+        }
+        if (invalidPerms.length) {
+            return message.channel.send(`Missing permissions: ${invalidPerms}`);
+        }
+    }
+
     try {
         command.execute(client, message, args, Discord, profileData);
     } catch (err) {

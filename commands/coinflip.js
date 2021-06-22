@@ -5,6 +5,7 @@ function randomNumber(min, max) {
 module.exports = {
     name: 'coinflip',
     aliases: ['cf'],
+    permissions: [],
     description: 'flips a coin',
     execute(client, message, args, Discord) {
         let flip = randomNumber(1, 100);

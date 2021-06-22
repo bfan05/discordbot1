@@ -1,6 +1,7 @@
 module.exports = {
     name: 'balance',
     aliases: ['bal'],
+    permissions: [],
     description: 'check your balance!',
     execute(client, message, args, Discord, profileData) {
         const newEmbed = new Discord.MessageEmbed()
