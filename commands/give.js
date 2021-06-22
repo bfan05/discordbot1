@@ -37,14 +37,14 @@ module.exports = {
     name: 'give',
     aliases: [],
     permissions: [],
-    description: 'flips a coin',
+    description: 'Give a friend some TMC Cash!',
     async execute(client, message, args, Discord, profileData) {
+        if (!args.length) return message.channel.send('You need to mention a member to give them TMC Cash!');
         const data = await profileModel.findOne({ userID: message.author.id });
 
-        if (!args[0]) return message.channel.send('Please specify how much you want to gamble!');
-        if (isNaN(args[0])) return message.reply("Please enter a real number!");
-        if (args[0] > data.coins) return message.reply("You don't have enough TMC Cash, silly!");
-        if (args[0] <= 0) return message.reply("You must gamble a positive amount, silly!");
+        if (!args[1]) return message.channel.send('Please specify how much you want to give!');
+        if (isNaN(args[1])) return message.reply("Please enter a real number!");
+        if (args[1] <= 0) return message.reply("You must give a positive amount, silly!");
 
         if (!args[1] || (args[1] != 'heads' && args[1] != 'h'
         && args[1] != 'tails' && args[1] != 't')) return message.reply('You must choose heads or tails!');
@@ -52,7 +52,7 @@ module.exports = {
         let totalUpdate = 0;
         let bet = Math.floor(args[0]);
 
-        let flip = randomNumber(1, 101);
+        let flip = 10;
         if (flip == 1) {
             message.channel.send(`${message.author.username} bet **${bet}**... 🪙 **|** the coin lands on its **side**! You won **${bet}** TMC Cash!`);
         }
