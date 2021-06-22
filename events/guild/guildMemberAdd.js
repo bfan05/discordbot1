@@ -5,7 +5,7 @@ module.exports = async(Discord, client, guildMember) => {
         userID: guildMember.id,
         serverID: guildMember.guild.id,
         coins: 10,
-        total: 0,
+        total: 10,
     });
     profile.save();
     let welcomeRole = guildMember.guild.roles.cache.find(role => role.name === 'Member');
