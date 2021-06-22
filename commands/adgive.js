@@ -7,7 +7,6 @@ module.exports = {
     description: 'Admins, give a member some TMC Cash!',
     async execute(client, message, args, Discord, profileData) {
         if (!args.length) return message.channel.send('You need to mention a member to give them TMC Cash!');
-        const data = await profileModel.findOne({ userID: message.author.id });
 
         if (!args[1]) return message.channel.send('Please specify how much you want to give!');
         if (isNaN(args[1])) return message.channel.send("Please enter a real number!");
