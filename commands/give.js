@@ -46,47 +46,23 @@ module.exports = {
         if (isNaN(args[1])) return message.reply("Please enter a real number!");
         if (args[1] <= 0) return message.reply("You must give a positive amount, silly!");
 
-        if (!args[1] || (args[1] != 'heads' && args[1] != 'h'
-        && args[1] != 'tails' && args[1] != 't')) return message.reply('You must choose heads or tails!');
-        let update = 0;
-        let totalUpdate = 0;
-        let bet = Math.floor(args[0]);
+        const amount = Math.floor(args[1]);
+        const target = message.mentions.users.first();
+        if (!target) return message.channel.send("That user does not exist!");
 
-        let flip = 10;
-        if (flip == 1) {
-            message.channel.send(`${message.author.username} bet **${bet}**... 🪙 **|** the coin lands on its **side**! You won **${bet}** TMC Cash!`);
-        }
-        else if(flip % 2 == 0) {
-            if (args[1] == 'heads' || args[1] == 'h') {
-                update = bet;
-                message.channel.send(`${message.author.username} bet **${bet}** and chose heads... 🪙 **|** the coin lands on **heads**! You won **${2 * bet}** TMC Cash!`);
-            }
-            else {
-                update = -bet;
-                message.channel.send(`${message.author.username} bet **${bet}** and chose heads... 🪙 **|** the coin lands on **heads**! You lost it all...`);
-            }
-        }
-        else {
-            if (args[1] == 'tails' || args[1] == 't') {
-                update = bet;
-                message.channel.send(`${message.author.username} bet **${bet}** and chose tails... 🪙 **|** the coin lands on **tails**! You won **${2 * bet}** TMC Cash!`);
-            }
-            else {
-                update = -bet;
-                message.channel.send(`${message.author.username} bet **${bet}** and chose tails... 🪙 **|** the coin lands on **tails**! You lost it all...`);
-            }
-        }
-        if (update > 0) totalUpdate = update;
+        const targetData = await profileModel.findOne({ userID: target.id });
+        if (!targetData) return message.channel.send(`This user doesn't exist in the database. Tell him or her to use the -join command!`);
+
         const response = await profileModel.findOneAndUpdate(
             {
-                userID: message.author.id,
+                userID: target.id,
             }, 
             {
                 $inc: {
-                    coins: update,
-                    total: totalUpdate,
+                    coins: amount
                 },
             }
         );
+        message.channel.send(`**${target.username}** gained ${amount} TMC Cash!`);
     }
 }
