@@ -76,7 +76,7 @@ module.exports = async (Discord, client, message) => {
     }
 
     try {
-        command.execute(client, message, args, cmd, Discord, profileData);
+        command.execute(client, message, args, Discord, profileData);
     } catch (err) {
         message.reply('there was an issue executing this command!');
         console.log(err);
