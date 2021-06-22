@@ -8,7 +8,7 @@ module.exports = {
     name: 'coinflip',
     aliases: ['cf'],
     permissions: [],
-    description: 'flips a coin',
+    description: 'Flip a coin to win some cash!',
     async execute(client, message, args, Discord, profileData) {
         const data = await profileModel.findOne({ userID: message.author.id });
 
