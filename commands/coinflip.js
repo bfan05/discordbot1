@@ -34,7 +34,7 @@ module.exports = {
             }
             else {
                 update = -bet;
-                message.channel.send(`${message.author.username} bet **${bet}** and chose heads... 🪙 **|** the coin lands on **heads**! You lost it all...`);
+                message.channel.send(`${message.author.username} bet **${bet}** and chose tails... 🪙 **|** the coin lands on **heads**! You lost it all...`);
             }
         }
         else {
@@ -44,7 +44,7 @@ module.exports = {
             }
             else {
                 update = -bet;
-                message.channel.send(`${message.author.username} bet **${bet}** and chose tails... 🪙 **|** the coin lands on **tails**! You lost it all...`);
+                message.channel.send(`${message.author.username} bet **${bet}** and chose heads... 🪙 **|** the coin lands on **tails**! You lost it all...`);
             }
         }
         if (update > 0) totalUpdate = update;
