@@ -15,7 +15,7 @@ module.exports = {
         if (!args[0]) return message.channel.send('Please specify how much you want to gamble!');
         if (isNaN(args[0])) return message.reply("Please enter a real number!");
         if (args[0] > data.coins) return message.reply("You don't have enough TMC Cash, silly!");
-        if (args[0] < 0) return message.reply("You must gamble a positive amount, silly!");
+        if (args[0] <= 0) return message.reply("You must gamble a positive amount, silly!");
 
         if (!args[1] || (args[1] != 'heads' && args[1] != 'h'
         && args[1] != 'tails' && args[1] != 't')) return message.reply('You must choose heads or tails!');
