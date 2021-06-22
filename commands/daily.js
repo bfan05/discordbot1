@@ -1,10 +1,10 @@
 const profileModel = require('../models/profileSchema')
 
 module.exports = {
-    name: 'beg',
+    name: 'daily',
     aliases: [],
     permissions: [],
-    description: 'beg for coins',
+    description: 'Claim your daily TMC Cash!',
     async execute(client, message, args, Discord, profileData) {
         const randomNumber = Math.floor(Math.random() * 200) + 1;
         const response = await profileModel.findOneAndUpdate(
@@ -17,6 +17,6 @@ module.exports = {
                 },
             }
         );
-        return message.channel.send(`**${message.author.username}** you begged and received **${randomNumber}** jj cash!`);
+        return message.channel.send(`**${message.author.username}** you claimed your daily and received **${randomNumber}** TMC Cash!`);
     },
 }
