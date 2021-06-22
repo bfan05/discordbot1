@@ -1,4 +1,7 @@
 require('dotenv').config();
+
+const cooldowns = new Map();
+
 const profileModel = require('../../models/profileSchema');
 module.exports = async (Discord, client, message) => {
     const prefix = process.env.bot_prefix;
@@ -59,26 +62,29 @@ module.exports = async (Discord, client, message) => {
         "MANAGE_EMOJIS",
     ]
 
-    if (command.permissions.length) {
-        let invalidPerms = [];
-        for (const perm of command.permissions) {
-            if (!validPermissions.includes(perm)) {
-                return console.log(`Invalid Perm ${perm}`)
+    if (!command) message.reply("This command doesn't exist!");
+    else {
+        if (command.permissions.length) {
+            let invalidPerms = [];
+            for (const perm of command.permissions) {
+                if (!validPermissions.includes(perm)) {
+                    return console.log(`Invalid Perm ${perm}`)
+                }
+                if (!message.member.hasPermission(perm)) {
+                    invalidPerms.push(perm);
+                    break;
+                }
             }
-            if (!message.member.hasPermission(perm)) {
-                invalidPerms.push(perm);
-                break;
+            if (invalidPerms.length) {
+                return message.channel.send(`Missing permissions: \`${invalidPerms}\``);
             }
-        }
-        if (invalidPerms.length) {
-            return message.channel.send(`Missing permissions: \`${invalidPerms}\``);
         }
     }
 
-    try {
+    /*try {
         command.execute(client, message, args, Discord, profileData);
     } catch (err) {
         message.reply('there was an issue executing this command!');
         console.log(err);
-    }
+    }*/
 }
