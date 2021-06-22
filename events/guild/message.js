@@ -79,6 +79,7 @@ module.exports = async (Discord, client, message) => {
                 return message.channel.send(`Missing permissions: \`${invalidPerms}\``);
             }
         }
+        command.execute(client, message, args, Discord, profileData);
     }
 
     /*try {
