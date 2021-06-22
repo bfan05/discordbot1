@@ -28,6 +28,25 @@ module.exports = async (Discord, client, message) => {
     
     const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 
+    if (!cooldowns.has(command.name)) {
+        cooldowns.set(command.name, new Discord.Collection());
+    }
+
+    const currentTime = Date.now();
+    const timeStamps = cooldowns.get(command.name);
+    const cooldownAmount = (command.cooldown) * 1000;
+
+    if (timeStamps.has(message.author.id)) {
+        const expirationTime = timeStamps.get(message.author.id) + cooldownAmount;
+        if (currentTime < expirationTime) {
+            const timeLeft = (expirationTime - currentTime) / 1000;
+            return message.reply(`Please wait ${timeLeft.toFixed(1)} more seconds before using ${command.name}`);
+        }
+    }
+
+    timeStamps.set(message.author.id, currentTime);
+    setTimeout(() => timeStamps.delete(message.author.id, cooldownAmount));
+
     const validPermissions = [
         "CREATE_INSTANT_INVITE",
         "KICK_MEMBERS",
