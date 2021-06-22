@@ -15,24 +15,20 @@ module.exports = {
     const target = message.mentions.users.first();
     if (!target) return message.channel.send("That user does not exist!");
 
-    try {
-      const targetData = await profileModel.findOne({ userID: target.id });
-      if (!targetData) return message.channel.send(`This user doesn't exist in the database. Tell him or her to use the -join command!`);
+    const targetData = await profileModel.findOne({ userID: target.id });
+    if (!targetData) return message.channel.send(`This user doesn't exist in the database. Tell him or her to use the -join command!`);
 
-      await profileModel.findOneAndUpdate(
+    const response = await profileModel.findOneAndUpdate(
         {
-          userID: target.id,
-        },
+            userID: target.id,
+        }, 
         {
-          $inc: {
-            coins: amount,
-          },
+            $inc: {
+                coins: amount,
+                total: totalUpdate,
+            },
         }
-      );
-
-      return message.channel.send(`**${target.username}** gained ${amount} TMC Cash!`);
-    } catch (err) {
-      console.log(err);
-    }
+    );
+    message.channel.send(`**${target.username}** gained ${amount} TMC Cash!`);
   },
 };
