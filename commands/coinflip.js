@@ -22,6 +22,7 @@ module.exports = {
         let update = 0;
         let totalUpdate = 0;
         let bet = Math.floor(args[0]);
+        if (bet > 1000000) bet = 1000000;
 
         let flip = randomNumber(1, 101);
         if (flip == 1) {
