@@ -25,5 +25,10 @@ module.exports = async (Discord, client, message) => {
     
     const command = client.commands.get(cmd);
 
-    if (command) command.execute(client, message, args, Discord);
+    try {
+        command.execute(client, message, args, Discord, profileData);
+    } catch (err) {
+        message.reply('there was an issue executing this command!');
+        console.log(err);
+    }
 }
