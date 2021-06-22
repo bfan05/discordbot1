@@ -5,7 +5,7 @@ module.exports = {
         const newEmbed = new Discord.MessageEmbed()
         .setColor('#9CCFE7')
         .setTitle(`**${message.author.username}**'s TMC Cash`)
-        .setThumbnail(message.author.dispalyAvatarURL())
+        .setThumbnail(message.author.displayAvatarURL)
         .addFields(
             {name: 'Wallet:', value: `${profileData.coins} 𝕋`},
             {name: 'Bank:', value: `${profileData.bank} 𝕋`},
