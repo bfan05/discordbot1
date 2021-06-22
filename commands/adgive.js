@@ -12,7 +12,7 @@ module.exports = {
         if (isNaN(args[1])) return message.channel.send("Please enter a real number!");
         if (args[1] <= 0) return message.channel.send("You must give a positive amount, silly!");
 
-        const amount = Math.floor(args[1]);
+        let amount = Math.floor(args[1]);
         if (amount > 1000000) amount = 1000000;
         const target = message.mentions.users.first();
         if (!target) return message.channel.send("That user does not exist!");
