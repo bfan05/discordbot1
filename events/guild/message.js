@@ -62,7 +62,7 @@ module.exports = async (Discord, client, message) => {
         "MANAGE_EMOJIS",
     ]
 
-    if (!command) message.reply("This command doesn't exist!");
+    if (!command) message.reply("this command doesn't exist!");
     else {
         if (command.permissions.length) {
             let invalidPerms = [];
@@ -81,11 +81,4 @@ module.exports = async (Discord, client, message) => {
         }
         command.execute(client, message, args, Discord, profileData);
     }
-
-    /*try {
-        command.execute(client, message, args, Discord, profileData);
-    } catch (err) {
-        message.reply('there was an issue executing this command!');
-        console.log(err);
-    }*/
 }
