@@ -15,8 +15,8 @@ module.exports = {
             {name: '-balance/bal', value: 'Check your TMC Cash balance!'},
             {name: '-daily', value: 'Claim your daily TMC Cash! Must wait 24 hours before using again.'},
             {name: '-coinflip/cf [amount] [heads/h or tails/t]', value: 'Are you feeling lucky? Coinflip to win some cash!'},
-            {name: '-adgive @[member] [amount]', value: 'Only for admins! Reward someone with TMC Cash.'},
-            {name: 'reset @[member]', value: 'Someone has been naughty! Reset their cash.'}
+            {name: '-adgive @[member] [amount]', value: 'Only for admins. Reward someone with TMC Cash!'},
+            {name: 'reset @[member]', value: 'Only for admins. Someone has been naughty! Reset their cash.'}
         )
         .setFooter('Created by bfan#0125');
 
