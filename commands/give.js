@@ -59,10 +59,11 @@ module.exports = {
             }, 
             {
                 $inc: {
-                    coins: amount
+                    coins: amount,
+                    total: amount
                 },
             }
         );
-        message.channel.send(`**${target.username}** gained ${amount} TMC Cash!`);
+        message.channel.send(`**${target.username}** gained **${amount}** TMC Cash!`);
     }
 }
