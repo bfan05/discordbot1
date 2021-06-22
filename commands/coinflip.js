@@ -29,21 +29,21 @@ module.exports = {
         else if(flip % 2 == 0) {
             if (args[1] == 'heads' || args[1] == 'h') {
                 update = args[0];
-                message.channel.send(`${message.author.username} bet **${args[0]}**... 🪙 **|** the coin lands on **heads**! You won **${2 * args[0]}** TMC Cash!`);
+                message.channel.send(`${message.author.username} bet **${args[0]}** and chose heads... 🪙 **|** the coin lands on **heads**! You won **${2 * args[0]}** TMC Cash!`);
             }
             else {
                 update = -args[0];
-                message.channel.send(`${message.author.username} bet **${args[0]}**... 🪙 **|** the coin lands on **heads**! You lost it all...`);
+                message.channel.send(`${message.author.username} bet **${args[0]}** and chose heads... 🪙 **|** the coin lands on **heads**! You lost it all...`);
             }
         }
         else {
             if (args[1] == 'tails' || args[1] == 't') {
                 update = args[0];
-                message.channel.send(`${message.author.username} bet **${args[0]}**... 🪙 **|** the coin lands on **tails**! You won **${2 * args[0]}** TMC Cash!`);
+                message.channel.send(`${message.author.username} bet **${args[0]}** and chose tails... 🪙 **|** the coin lands on **tails**! You won **${2 * args[0]}** TMC Cash!`);
             }
             else {
                 update = -args[0];
-                message.channel.send(`${message.author.username} bet **${args[0]}**... 🪙 **|** the coin lands on **tails**! You lost it all...`);
+                message.channel.send(`${message.author.username} bet **${args[0]}** and chose tails... 🪙 **|** the coin lands on **tails**! You lost it all...`);
             }
         }
         if (update > 0) totalUpdate = update;
