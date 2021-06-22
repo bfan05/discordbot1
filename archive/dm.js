@@ -1,5 +1,7 @@
 module.exports = {
     name: 'dm',
+    aliases: [],
+    permissions: [],
     description: 'this command dms a member',
     execute(client, message, args, Discord) {
         const member = message.mentions.users.first();

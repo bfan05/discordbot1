@@ -4,6 +4,8 @@ function randomNumber(min, max) {
 
 module.exports = {
     name: 'roll',
+    aliases: [],
+    permissions: [],
     description: 'gives a random number in a range',
     execute(client, message, args, Discord) {
         if (args[0] && args[1]) {

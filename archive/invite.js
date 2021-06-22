@@ -1,5 +1,7 @@
 module.exports = {
     name: 'invite',
+    aliases: [],
+    permissions: [],
     description: 'Sends invite link.',
     execute(client, message, args, Discord) {
         const newEmbed = new Discord.MessageEmbed()
