@@ -13,7 +13,7 @@ module.exports = {
         const data = await profileModel.findOne({ userID: message.author.id });
 
         if (!args[0]) return message.channel.send('Please specify how much you want to gamble!');
-        if (isNaN(args[0])) return message.channel.send("Please enter a real number!");
+        if (isNaN(args[0]) && args[0] != 'all') return message.channel.send("Please enter a real number!");
         if (args[0] > data.coins) return message.channel.send("You don't have enough TMC Cash, silly!");
         if (args[0] <= 0) return message.channel.send("You must gamble a positive amount, silly!");
 
@@ -21,7 +21,9 @@ module.exports = {
         && args[1] != 'tails' && args[1] != 't')) return message.reply('You must choose heads or tails!');
         let update = 0;
         let totalUpdate = 0;
-        let bet = Math.floor(args[0]);
+        let bet = 0;
+        if (args[0] == 'all') bet = min(data.coins, 1000000);
+        else bet = Math.floor(args[0]);
         if (bet > 1000000) bet = 1000000;
 
         let flip = randomNumber(1, 101);
