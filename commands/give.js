@@ -18,7 +18,7 @@ module.exports = {
         const target = message.mentions.users.first();
         if (!target) return message.channel.send("That user does not exist!");
 
-        if (target.id == message.author.id) message.channel.send(`${target.id} gave ${amount} to themself...`);
+        if (target.id == message.author.id) return message.channel.send(`${target.username} gave **${amount}** TMC Cash to themself...`);
 
         const targetData = await profileModel.findOne({ userID: target.id });
         if (!targetData) return message.channel.send(`This user doesn't exist in the database. Tell him or her to use the -join command!`);
