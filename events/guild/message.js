@@ -41,9 +41,13 @@ module.exports = async (Discord, client, message) => {
         const expiration_time = time_stamps.get(message.author.id) + cooldown_amount;
 
         if(current_time < expiration_time){
-            const time_left = (expiration_time - current_time) / 1000;
+            const time_left = Math.floor((expiration_time - current_time) / 1000);
+            const hours_left = Math.floor(time_left / 3600);
+            const minutes_left = Math.floor((time_left - 3600 * hours_left) / 60);
+            const seconds_left = Math.floor((time_left - (3600 * hours_left + 60 * minutes_left)));
 
-            return message.reply(`Please wait ${time_left.toFixed(1)} more seconds before using ${command.name}`);
+            return message.reply(`You need to wait ${hours_left}**H** ${minutes_left}**M** ${seconds_left}**S** 
+            to claim your daily again!`);
         }
     }
 

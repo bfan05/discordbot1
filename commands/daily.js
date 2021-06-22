@@ -3,7 +3,7 @@ const profileModel = require('../models/profileSchema')
 module.exports = {
     name: 'daily',
     aliases: [],
-    cooldown: 10,
+    cooldown: 86400,
     permissions: [],
     description: 'Claim your daily TMC Cash!',
     async execute(client, message, args, Discord, profileData) {
