@@ -32,7 +32,7 @@ module.exports = {
                 },
             }
         );
-        response = await profileModel.findOneAndUpdate(
+        const response2 = await profileModel.findOneAndUpdate(
             {
                 userID: message.author.id,
             }, 
