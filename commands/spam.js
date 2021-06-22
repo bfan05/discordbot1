@@ -1,5 +1,7 @@
 module.exports = {
     name: 'spam',
+    aliases: [],
+    permissions: [],
     description: 'the bot spams',
     async execute(client, message, args, Discord) {
         if (!args[0]) return message.reply("please specify the amount of messages you want to clear!");
