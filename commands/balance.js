@@ -12,6 +12,7 @@ module.exports = {
             {name: 'Wallet:', value: `${profileData.coins} 𝕋`},
             {name: 'Total (all time):', value: `${profileData.total} 𝕋`},
         )
+        .setFooter('Created by bfan#0125')
 
         message.channel.send(newEmbed);
     }
