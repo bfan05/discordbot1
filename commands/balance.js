@@ -5,9 +5,11 @@ module.exports = {
         const newEmbed = new Discord.MessageEmbed()
         .setColor('#9CCFE7')
         .setTitle(`**${message.author.username}**'s TMC Cash`)
+        .setThumbnail(message.author.avatar)
+        .setURL('https://media.discordapp.net/attachments/831654793754968074/849919810611314748/eed9f8da-327e-4646-b24b-e916c6cca394.gif')
         .addFields(
-            {name: 'Wallet', value: `𝕋${profileData.coins}`},
-            {name: 'Bank', value: `𝕋${profileData.bank}`},
+            {name: 'Wallet:', value: `${profileData.coins}𝕋`},
+            {name: 'Bank:', value: `${profileData.bank}𝕋`},
         )
 
         message.channel.send(newEmbed);
