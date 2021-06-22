@@ -36,7 +36,6 @@ module.exports = async (Discord, client, message) => {
     const time_stamps = cooldowns.get(command.name);
     const cooldown_amount = (command.cooldown) * 1000;
 
-    //If time_stamps has a key with the author's id then check the expiration time to send a message to a user.
     if(time_stamps.has(message.author.id)){
         const expiration_time = time_stamps.get(message.author.id) + cooldown_amount;
 
@@ -51,9 +50,7 @@ module.exports = async (Discord, client, message) => {
         }
     }
 
-    //If the author's id is not in time_stamps then add them with the current time.
     time_stamps.set(message.author.id, current_time);
-    //Delete the user's id once the cooldown is over.
     setTimeout(() => time_stamps.delete(message.author.id), cooldown_amount);
 
     const validPermissions = [
