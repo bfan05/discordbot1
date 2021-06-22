@@ -9,7 +9,7 @@ module.exports = {
     aliases: ['cf'],
     permissions: [],
     description: 'flips a coin',
-    async execute(client, message, args, Discord) {
+    async execute(client, message, args, Discord, profileData) {
         const data = await profileModel.findOne({ userID: message.author.id });
 
         if (!args[0]) return message.channel.send('Please specify how much you want to gamble!');

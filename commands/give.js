@@ -4,10 +4,10 @@ module.exports = {
   aliases: [],
   permissions: [],
   description: "Give a player some TMC Cash!",
-  async execute(message, args, cmd, client, discord, profileData) {
-    if (!args.length) return message.channel.send("You need to mention a player to give them coins!");
+  async execute(message, args, client, Discord, profileData) {
+    if (!args.length) return message.channel.send("You need to mention a player to give them TMC Cash!");
 
-    if (!args[1]) return message.channel.send('Please specify how much you want to gamble!');
+    if (!args[1]) return message.channel.send('Please specify how much you want to give!');
     if (isNaN(args[1])) return message.reply("Please enter a real number!");
     if (args[1] <= 0) return message.reply("You must give a positive amount, silly!");
 
@@ -17,7 +17,7 @@ module.exports = {
 
     try {
       const targetData = await profileModel.findOne({ userID: target.id });
-      if (!targetData) return message.channel.send(`This user doens't exist in the database. Tell him or her to use the -join command!`);
+      if (!targetData) return message.channel.send(`This user doesn't exist in the database. Tell him or her to use the -join command!`);
 
       await profileModel.findOneAndUpdate(
         {
@@ -30,7 +30,7 @@ module.exports = {
         }
       );
 
-      return message.channel.send(`This player has been given their coins! ${amount} of coins!`);
+      return message.channel.send(`**${target.username}** gained ${amount} TMC Cash!`);
     } catch (err) {
       console.log(err);
     }
