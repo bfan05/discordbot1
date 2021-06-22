@@ -20,31 +20,33 @@ module.exports = {
         if (!args[1] || (args[1] != 'heads' && args[1] != 'h'
         && args[1] != 'tails' && args[1] != 't')) return message.reply('You must choose heads or tails!');
         let update = 0;
+        let totalUpdate = 0;
 
         let flip = randomNumber(1, 101);
         if (flip == 1) {
-            message.channel.send(`${message.author.username} bet ${args[0]}... 🪙 **|** the coin lands on its **side**! You won ${args[0]} TMC Cash!`);
+            message.channel.send(`${message.author.username} bet **${args[0]}**... 🪙 **|** the coin lands on its **side**! You won **${args[0]}** TMC Cash!`);
         }
         else if(flip % 2 == 0) {
             if (args[1] == 'heads' || args[1] == 'h') {
                 update = args[0];
-                message.channel.send(`${message.author.username} bet ${args[0]}... 🪙 **|** the coin lands on **heads**! You won ${2 * args[0]} TMC Cash!`);
+                message.channel.send(`${message.author.username} bet **${args[0]}**... 🪙 **|** the coin lands on **heads**! You won **${2 * args[0]}** TMC Cash!`);
             }
             else {
                 update = -args[0];
-                message.channel.send(`${message.author.username} bet ${args[0]}... 🪙 **|** the coin lands on **heads**! You lost it all...`);
+                message.channel.send(`${message.author.username} bet **${args[0]}**... 🪙 **|** the coin lands on **heads**! You lost it all...`);
             }
         }
         else {
             if (args[1] == 'tails' || args[1] == 't') {
                 update = args[0];
-                message.channel.send(`${message.author.username} bet ${args[0]}... 🪙 **|** the coin lands on **tails**! You won ${2 * args[0]} TMC Cash!`);
+                message.channel.send(`${message.author.username} bet **${args[0]}**... 🪙 **|** the coin lands on **tails**! You won **${2 * args[0]}** TMC Cash!`);
             }
             else {
                 update = -args[0];
-                message.channel.send(`${message.author.username} bet ${args[0]}... 🪙 **|** the coin lands on **tails**! You lost it all...`);
+                message.channel.send(`${message.author.username} bet **${args[0]}**... 🪙 **|** the coin lands on **tails**! You lost it all...`);
             }
         }
+        if (update > 0) totalUpdate = update;
         const response = await profileModel.findOneAndUpdate(
             {
                 userID: message.author.id,
@@ -52,6 +54,7 @@ module.exports = {
             {
                 $inc: {
                     coins: update,
+                    total: totalUpdate,
                 },
             }
         );
