@@ -11,7 +11,7 @@ module.exports = {
         .setThumbnail('http://www.simpleimageresizer.com/_uploads/photos/fd03d8aa/tmc_2_15.gif')
         .addFields(
             {name: '-join', value: 'Join the bot! Using this command will get you on your way to becoming rich!'},
-            {name: '-give @[member] [amount]', value: 'Give another member some of your TMC Cash!'},
+            {name: '-give/send @[member] [amount]', value: 'Give another member some of your TMC Cash!'},
             {name: '-balance/bal', value: 'Check your TMC Cash balance!'},
             {name: '-daily', value: 'Claim your daily TMC Cash! Must wait 24 hours before using again.'},
             {name: '-coinflip/cf [amount] [heads/h or tails/t]', value: 'Are you feeling lucky? Coinflip to win some cash!'},

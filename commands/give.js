@@ -2,7 +2,7 @@ const profileModel = require("../models/profileSchema");
 
 module.exports = {
     name: 'give',
-    aliases: [],
+    aliases: ['send'],
     permissions: [],
     description: 'Give a friend some TMC Cash!',
     async execute(client, message, args, Discord, profileData) {
