@@ -19,7 +19,11 @@ module.exports = {
         const target = message.mentions.users.first();
         if (!target) return message.channel.send("That user does not exist!");
 
-        if (target.id == message.author.id) return message.channel.send(`${target.username} gave **${amount.toLocaleString()}** TMC Cash to themself...`);
+        if (target.id == message.author.id) {
+            client.channels.cache.get(`${target.username} gave **${amount.toLocaleString()}** TMC Cash to themself...`);
+            message.channel.send(`${target.username} gave **${amount.toLocaleString()}** TMC Cash to themself...`);
+            return;
+        }
 
         const targetData = await profileModel.findOne({ userID: target.id });
         if (!targetData) return message.channel.send(`This user doesn't exist in the database. Tell him or her to use the -join command!`);
@@ -45,14 +49,7 @@ module.exports = {
                 },
             }
         );
-        // const audit = client.channels.cache.find(channel => channel.id === '857330940631187526');
-        message.channel.send('wtf');
-        // audit.send(`**${message.author.username}** sent **${amount.toLocaleString()}** TMC Cash to **${target.username}**!`);
+        client.channels.cache.get('857330940631187526').send(`**${message.author.username}** sent **${amount.toLocaleString()}** TMC Cash to **${target.username}**!`);
         message.channel.send(`**${message.author.username}** sent **${amount.toLocaleString()}** TMC Cash to **${target.username}**!`);
-        /*try {
-            client.channels.cache.get('857330940631187526').send(`**${message.author.username}** sent **${amount.toLocaleString()}** TMC Cash to **${target.username}**!`);
-        } catch(err) {
-            console.log(err);
-        }*/
     }
 }
