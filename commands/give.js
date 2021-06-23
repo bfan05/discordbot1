@@ -46,6 +46,6 @@ module.exports = {
             }
         );
         message.channel.send(`**${message.author.username}** sent **${amount.toLocaleString()}** TMC Cash to **${target.username}**!`);
-        client.channels.get('857330940631187526').send(`**${message.author.username}** sent **${amount.toLocaleString()}** TMC Cash to **${target.username}**!`);
+        client.channels.cache.get('857330940631187526').send(`**${message.author.username}** sent **${amount.toLocaleString()}** TMC Cash to **${target.username}**!`);
     }
 }
