@@ -13,10 +13,12 @@ module.exports = {
             {name: '-join', value: 'Join the bot! Using this command will get you on your way to becoming rich!'},
             {name: '-give/send @[member] [amount]', value: 'Give another member some of your TMC Cash!'},
             {name: '-balance/bal', value: 'Check your TMC Cash balance!'},
+            {name: '-leaderboard/lb [page number]', value: 'Check the TMC Cash leaderboard!'},
             {name: '-daily', value: 'Claim your daily TMC Cash! Must wait 24 hours before using again.'},
-            {name: '-coinflip/cf [amount] [heads/h or tails/t]', value: 'Are you feeling lucky? Coinflip to win some cash!'},
+            {name: '-adtake @[member] [amount]', value: 'Only for admins. Take some TMC Cash from a member. No regrets!'},
             {name: '-adgive @[member] [amount]', value: 'Only for admins. Reward someone with TMC Cash!'},
-            {name: '-reset @[member]', value: 'Only for admins. Someone has been naughty! Reset their cash.'}
+            {name: '-reset @[member]', value: 'Only for admins. Someone has been naughty! Reset their cash.'},
+            {name: '-resetall', value: 'Only for admins. Reset everyone and enjoy the chaos!'},
         )
         .setFooter('Created by bfan#0125');
 

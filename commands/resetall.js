@@ -2,7 +2,7 @@ const profileModel = require("../models/profileSchema");
 
 module.exports = {
     name: 'resetall',
-    aliases: ['rsall'],
+    aliases: [''],
     permissions: ['ADMINISTRATOR'],
     description: "Reset everyone's TMC Cash",
     async execute(client, message, args, Discord, profileData) {
