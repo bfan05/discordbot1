@@ -17,6 +17,7 @@ module.exports = {
         if (args[1] > target.coins) return message.channel.send("You can't take more than they have, silly!");
 
         let amount = Math.floor(args[1]);
+        if (amount > 1000) amount = 1000;
 
         const targetData = await profileModel.findOne({ userID: target.id });
         if (!targetData) return message.channel.send(`This user doesn't exist in the database. Tell him or her to use the -join command!`);
