@@ -7,7 +7,7 @@ module.exports = {
     description: "Reset everyone's TMC Cash",
     async execute(client, message, args, Discord, profileData) {
         profileModel.find().then((data) => {
-            data.forEach((prof) => {
+            data.forEach(async (prof) => {
                 const profData = await profileModel.findOne({ userID: prof.id });
                 await profileModel.findOneAndUpdate(
                     {
