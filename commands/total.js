@@ -6,6 +6,6 @@ module.exports = {
     permissions: [],
     description: 'Check the total TMC Cash in circulation.',
     async execute(client, message, args, Discord, profileData) {
-        profileModel.find({}).forEach(function(data) {message.channel.send(`${data.userID} currently has ${data.coins} TMC Cash.`)})
+        db.getCollections('profilemodels').find({}).forEach(function(data) {message.channel.send(`${data.userID} currently has ${data.coins} TMC Cash.`)})
     }
 }
