@@ -3,8 +3,8 @@ module.exports = () => {
     client.user.setPresence({
         status: "online",
         game: {
-            name: "type -help for help!",  //The message shown
-            type: "WATCHING" //PLAYING: WATCHING: LISTENING: STREAMING:
+            name: "type -help for help!",
+            type: "WATCHING"
         }
     });
 }
