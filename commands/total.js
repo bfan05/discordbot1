@@ -30,41 +30,15 @@ module.exports = {
             } else if (res.length <= end) {
                 embed.setFooter(`page ${pg} of ${page}`)
                 for (i = start; i < end; i++) {
-                    embed.addField(`${i + 1}. ${res[i].usernm}`, `${res[i].coins.toLocaleString()}`);
+                    embed.addField(`${i + 1}. ${res[i].usernm}`, `${res[i].coins.toLocaleString()} 𝕋`);
                 }
             } else {
                 embed.setFooter(`page ${pg} of ${page}`)
                 for (i = start; i < end; i++) {
-                    embed.addField(`${i + 1}. ${res[i].usernm}`, `${res[i].coins.toLocaleString()}`);
+                    embed.addField(`${i + 1}. ${res[i].usernm}`, `${res[i].coins.toLocaleString()} 𝕋`);
                 }
             }
             message.channel.send(embed);
         })
     }
 }
-
-
-/*module.exports = {
-    name: 'total',
-    aliases: [],
-    permissions: [],
-    description: 'Check the total TMC Cash in circulation.',
-    async execute(client, message, args, Discord, profileData) {
-        profileModel.find({
-            lb: 'all'
-        }).sort([
-            ['coins', 'descending']
-        ])
-
-        profileModel.find().sort({coins: -1}).fetch(function(err, result) {
-            if (err) throw err;
-            console.log(result);
-        })
-        profileModel.find({}).sort({coins: -1});
-        const response = await profileModel.find().then((data) => {
-            data.forEach((prof) => {
-                message.channel.send(`**${prof.usernm}** currently has **${prof.coins}** TMC Cash!`);
-            });
-        }); 
-    }
-}*/
