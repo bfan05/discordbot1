@@ -7,9 +7,7 @@ module.exports = {
     description: 'Check the TMC Cash leaderboard!',
     
     async execute(client, message, args, Discord, profileData) {
-        profileModel.find({
-            lb: 'all',
-        }).sort([
+        profileModel.find().sort([
             ['coins', 'descending']
         ]).exec((err, res) => {
             if (err) console.log(err);
