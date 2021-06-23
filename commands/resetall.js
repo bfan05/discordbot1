@@ -6,28 +6,13 @@ module.exports = {
     permissions: ['ADMINISTRATOR'],
     description: "Reset everyone's TMC Cash",
     async execute(client, message, args, Discord, profileData) {
-        // let bulkOp = profileModel.initializeOrderedBulkOp();
-        // let count = 0;
-
-        const response = await profileModel.find().then((data) => {
-            data.forEach((prof) => {
-                profileModel.updateOne({ _id: prof._id }, { $set: { coins: 0 }})
-            });
-        }); 
-        
-        message.channel.send('Reset complete!');
-
-        /*profileModel.find().forEach(function(data) {
-            bulkOp.find({ '_id': doc._id }).updateOne({
-                '$set': { coins: 0, total: 0 }
-            });
-            count++;
-            if (count % 100 == 0) {
-                bulkOp.execute();
-                bulkOp = collection.initializeOrderedBulkOp();
-            }
-        });
-
-        if (count > 0) bulkOp.execute();*/
+        const filter = {};
+        const update = {
+            $set: {
+                coins: 0,
+            },
+        };
+        const result = await profileModel.updateMany(filter, update);
+        console.log(result);
     }
 }
