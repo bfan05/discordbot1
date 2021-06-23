@@ -14,5 +14,6 @@ module.exports = {
         };
         const result = await profileModel.updateMany(filter, update);
         console.log(result);
+        message.channel.send('hi');
     }
 }
