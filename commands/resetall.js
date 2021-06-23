@@ -11,11 +11,7 @@ module.exports = {
 
         const response = await profileModel.find().then((data) => {
             data.forEach((prof) => {
-                try {
-                    profileModel.updateOne({ _id: prof._id }, { $set: { coins: 0 }})
-                } catch(err) {
-                    console.log(err);
-                }
+                profileModel.updateOne({ _id: prof._id }, { $set: { coins: 0 }})
             });
         }); 
         
