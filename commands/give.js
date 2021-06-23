@@ -46,6 +46,7 @@ module.exports = {
             }
         );
         const audit = client.channels.cache.find(channel => channel.id === '857330940631187526');
+        message.channel.send(audit.id);
         audit.send(`**${message.author.username}** sent **${amount.toLocaleString()}** TMC Cash to **${target.username}**!`);
         message.channel.send(`**${message.author.username}** sent **${amount.toLocaleString()}** TMC Cash to **${target.username}**!`);
         /*try {
