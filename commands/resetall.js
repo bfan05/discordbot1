@@ -8,8 +8,8 @@ module.exports = {
     async execute(client, message, args, Discord, profileData) {
         profileModel.find().then((data) => {
             data.forEach(async (prof) => {
-                const profData = await profileModel.findOne({ userID: prof.id });
-                await profileModel.findOneAndUpdate(
+                let profData = profileModel.findOne({ userID: prof.id });
+                profileModel.findOneAndUpdate(
                     {
                         userID: prof.id,
                     }, 
