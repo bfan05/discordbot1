@@ -45,9 +45,9 @@ module.exports = {
                 },
             }
         );
-        const audit = client.channels.cache.find(channel => channel.id === '857330940631187526');
-        message.channel.send('857330940631187526');
-        audit.send(`**${message.author.username}** sent **${amount.toLocaleString()}** TMC Cash to **${target.username}**!`);
+        // const audit = client.channels.cache.find(channel => channel.id === '857330940631187526');
+        message.channel.send('wtf');
+        // audit.send(`**${message.author.username}** sent **${amount.toLocaleString()}** TMC Cash to **${target.username}**!`);
         message.channel.send(`**${message.author.username}** sent **${amount.toLocaleString()}** TMC Cash to **${target.username}**!`);
         /*try {
             client.channels.cache.get('857330940631187526').send(`**${message.author.username}** sent **${amount.toLocaleString()}** TMC Cash to **${target.username}**!`);
