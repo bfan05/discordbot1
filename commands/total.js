@@ -10,6 +10,6 @@ module.exports = {
         const cursor = collection.find({
             __v: 0,
         });
-        cursor.forEach(function(data) {message.channel.send(`{user.userID} currently has {user.coins} TMC Cash.`)})
+        cursor.forEach(function(data) {message.channel.send(`${data.userID} currently has ${data.coins} TMC Cash.`)})
     }
 }
