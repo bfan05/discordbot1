@@ -1,6 +1,6 @@
 const profileModel = require("../models/profileSchema");
 
-module.exports.run = async(client, message, args, Discord) => {
+module.exports.execute = async(client, message, args, Discord) => {
     message.channel.send("hello");
 }
 
