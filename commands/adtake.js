@@ -16,6 +16,8 @@ module.exports = {
         if (args[1] <= 0) return message.channel.send("You must take a positive amount, silly!");
         if (args[1] > target.coins) return message.channel.send("You can't take more than they have, silly!");
 
+        let amount = Math.floor(args[1]);
+
         const targetData = await profileModel.findOne({ userID: target.id });
         if (!targetData) return message.channel.send(`This user doesn't exist in the database. Tell him or her to use the -join command!`);
 
@@ -29,6 +31,17 @@ module.exports = {
                 },
             }
         );
-        message.channel.send(`**${target.username}** lost **${amount.toLocaleString()}** TMC Cash. Boohoo!`);
+        const response2 = await profileModel.findOneAndUpdate(
+            {
+                userID: message.author.id,
+            }, 
+            {
+                $inc: {
+                    coins: amount,
+                    total: amount,
+                },
+            }
+        );
+        message.channel.send(`**${message.author.username}** took **${amount.toLocaleString()}** TMC Cash from **${target.username}**. Boohoo!`);
     }
 }
