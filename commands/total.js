@@ -20,7 +20,7 @@ module.exports = {
             let pg = parseInt(args[0]);
             if (pg != Math.floor(pg)) pg = 1;
             if (!pg) pg = 1;
-            let end = pg * 10;
+            let end = Math.max(pg * 10, res.length);
             let start = (pg * 10) - 10;
 
             if (res.length === 0) {
