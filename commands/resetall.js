@@ -6,7 +6,7 @@ module.exports = {
     permissions: ['ADMINISTRATOR'],
     description: "Reset everyone's TMC Cash",
     async execute(client, message, args, Discord, profileData) {
-        let bulkOp = profileModel.initializeOrderedBulkOp();
+        // let bulkOp = profileModel.initializeOrderedBulkOp();
         let count = 0;
         profileModel.find().forEach(function(data) {
             bulkOp.find({ '_id': doc._id }).updateOne({
