@@ -10,6 +10,7 @@ module.exports = {
         const update = {
             $set: {
                 coins: 0,
+                total: 0,
             },
         };
         const result = await profileModel.updateMany(filter, update);
