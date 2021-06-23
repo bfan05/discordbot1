@@ -8,8 +8,7 @@ module.exports = {
     async execute(client, message, args, Discord, profileData) {
         profileModel.find().then((data) => {
             data.forEach((prof) => {
-                prof.coins = 0;
-                prof.total = 0;
+                profileModel.updateOne({ _id: prof.id }, {$set: {coins: 0, total: 0}})
             });
         }); 
         message.channel.send('Reset complete!');
