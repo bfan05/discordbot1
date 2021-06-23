@@ -1,14 +1,48 @@
 const profileModel = require("../models/profileSchema");
 
-module.exports.execute = async(client, message, args, Discord) => {
-    message.channel.send("hello");
-}
-
-module.exports.help = {
+module.exports = {
     name: 'total',
     aliases: [],
     permissions: [],
     description: 'Check the TMC Cash leaderboard!',
+    
+    async execute(client, message, args, Discord, profileData) {
+        profileModel.find({
+            lb: 'all',
+        }).sort([
+            ['coins', 'descending']
+        ]).exec((err, res) => {
+            if (err) console.log(err);
+            var page = Math.ceil(res.length / 10);
+            
+            let embed = new Discord.MessageEmbed();
+            embed.setTitle("Leaderboard");
+            embed.setThumbnail('http://www.simpleimageresizer.com/_uploads/photos/fd03d8aa/tmc_2_15.gif');
+
+            let pg = parseInt(args[0]);
+            if (pg != Math.floor(pg)) pg = 1;
+            if (!pg) pg = 1;
+            let end = pg * 10;
+            let start = (pg * 10) - 10;
+
+            if (res.length === 0) {
+                embed.addField("Error", "No pages found!");
+            } else if (res.length <= start) {
+                embed.addField("Error", "No pages found!");
+            } else if (res.length <= end) {
+                embed.setFooter(`page ${pg} of ${page}`)
+                for (i = start; i < end; i++) {
+                    embed.addField(`${i + 1}. ${res[i].usernm}`, `${res[i].coins.toLocaleString()}`);
+                }
+            } else {
+                embed.setFooter(`page ${pg} of ${page}`)
+                for (i = start; i < end; i++) {
+                    embed.addField(`${i + 1}. ${res[i].usernm}`, `${res[i].coins.toLocaleString()}`);
+                }
+            }
+            message.channel.send(embed);
+        })
+    }
 }
 
 
