@@ -6,7 +6,7 @@ module.exports = {
     permissions: [],
     description: 'Check the total TMC Cash in circulation.',
     async execute(client, message, args, Discord, profileData) {
-        const collection = profileModel.collection('profilemodels');
+        const collection = collection('profilemodels');
         const cursor = collection.find({
             __v: 0,
         });
