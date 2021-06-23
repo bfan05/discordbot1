@@ -22,9 +22,9 @@ module.exports = {
         let update = 0;
         let totalUpdate = 0;
         let bet = 0;
-        if (args[0] == 'all') bet = Math.min(data.coins, 1000000);
+        if (args[0] == 'all') bet = Math.min(data.coins, 1000);
         else bet = Math.floor(args[0]);
-        if (bet > 1000000) bet = 1000000;
+        if (bet > 1000) bet = 1000;
 
         let flip = randomNumber(1, 101);
         if (flip == 1) {
