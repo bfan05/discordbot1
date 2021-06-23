@@ -8,9 +8,8 @@ module.exports = {
     async execute(client, message, args, Discord, profileData) {
         profileModel.find().then((data) => {
             data.forEach((prof) => {
-                console.log(`${prof.usernm} currently has ${prof.coins} TMC Cash.`);
+                message.channel.send(`**${prof.usernm}** currently has **${prof.coins}** TMC Cash!`);
             });
         });
-        // profileModel.find().forEach(function(data) {message.channel.send(`${data.userID} currently has ${data.coins} TMC Cash.`)})
     }
 }
