@@ -20,7 +20,7 @@ module.exports = {
         if (!target) return message.channel.send("That user does not exist!");
 
         if (target.id == message.author.id) {
-            client.channels.cache.get(`${target.username} gave **${amount.toLocaleString()}** TMC Cash to themself...`);
+            client.channels.cache.get('857330940631187526').send(`${target.username} gave **${amount.toLocaleString()}** TMC Cash to themself...`);
             message.channel.send(`${target.username} gave **${amount.toLocaleString()}** TMC Cash to themself...`);
             return;
         }
