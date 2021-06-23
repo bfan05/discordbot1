@@ -4,7 +4,7 @@ module.exports = async(Discord, client, guildMember) => {
     let profile = await profileModel.create({
         userID: guildMember.id,
         serverID: guildMember.guild.id,
-        username: guildMember.username,
+        usernm: guildMember.username,
         coins: 0,
         total: 0,
     });
