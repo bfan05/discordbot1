@@ -9,7 +9,7 @@ module.exports = {
         // let bulkOp = profileModel.initializeOrderedBulkOp();
         // let count = 0;
 
-        await profileModel.find().then((data) => {
+        const response = await profileModel.find().then((data) => {
             data.forEach((prof) => {
                 try {
                     profileModel.updateOne({ _id: prof._id }, { $set: { coins: 0 }})
@@ -18,6 +18,8 @@ module.exports = {
                 }
             });
         }); 
+        
+        message.channel.send('Reset complete!');
 
         /*profileModel.find().forEach(function(data) {
             bulkOp.find({ '_id': doc._id }).updateOne({
