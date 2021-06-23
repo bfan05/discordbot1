@@ -12,5 +12,6 @@ module.exports = {
                 prof.total = 0;
             });
         }); 
+        message.channel.send('Reset complete!');
     }
 }
