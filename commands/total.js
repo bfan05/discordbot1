@@ -7,7 +7,7 @@ module.exports = {
     description: 'Check the total TMC Cash in circulation.',
     async execute(client, message, args, Discord, profileData) {
         profileModel.find().sort({coins: -1});
-        profileModel.find().then((data) => {
+        const response = await profileModel.find().then((data) => {
             data.forEach((prof) => {
                 message.channel.send(`**${prof.usernm}** currently has **${prof.coins}** TMC Cash!`);
             });
