@@ -16,7 +16,7 @@ module.exports = {
             let embed = new Discord.MessageEmbed();
             embed.setColor('#9CCFE7');
             embed.setTitle("Leaderboard");
-            embed.setThumbnail('http://www.simpleimageresizer.com/_uploads/photos/fd03d8aa/tmc_2_15.gif');
+            embed.setThumbnail('https://cdn.discordapp.com/emojis/857732279367761940.png?v=1');
 
             let pg = parseInt(args[0]);
             if (pg != Math.floor(pg)) pg = 1;
