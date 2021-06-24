@@ -11,7 +11,7 @@ module.exports = {
         .addFields(
             {name: 'Wallet:', value: `${profileData.coins.toLocaleString()} 𝕋`},
             {name: 'Total (all time):', value: `${profileData.total.toLocaleString()} 𝕋`},
-        )
+        ) 
         .setFooter('Created by bfan#0125')
 
         message.channel.send(newEmbed);
