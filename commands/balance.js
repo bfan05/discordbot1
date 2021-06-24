@@ -7,7 +7,7 @@ module.exports = {
         const newEmbed = new Discord.MessageEmbed()
         .setColor('#9CCFE7')
         .setAuthor(`${message.author.username}'s TMC Cash`, `${message.author.avatarURL({dynamic: true})}`)
-        .setThumbnail('https://media.discordapp.net/attachments/831654793754968074/857733544749826068/resized-image-Promo.jpeg')
+        .setThumbnail('https://cdn.discordapp.com/emojis/857732279367761940.png?v=1')
         .addFields(
             {name: 'Wallet:', value: `${profileData.coins.toLocaleString()} 𝕋`},
             {name: 'Total (all time):', value: `${profileData.total.toLocaleString()} 𝕋`},
