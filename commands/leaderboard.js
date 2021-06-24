@@ -14,6 +14,7 @@ module.exports = {
             var page = Math.ceil(res.length / 10);
             
             let embed = new Discord.MessageEmbed();
+            embed.setColor('#9CCFE7');
             embed.setTitle("Leaderboard");
             embed.setThumbnail('http://www.simpleimageresizer.com/_uploads/photos/fd03d8aa/tmc_2_15.gif');
 
