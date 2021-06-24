@@ -3,7 +3,7 @@ const profileModel = require("../models/profileSchema");
 module.exports = {
     name: 'adgive',
     aliases: [],
-    permissions: ["ADMINISTRATOR"],
+    permissions: ["BAN_MEMBERS"],
     description: 'Admins, give a member some TMC Cash!',
     async execute(client, message, args, Discord, profileData) {
         if (!args.length) return message.channel.send('You need to mention a member to give them TMC Cash!');
