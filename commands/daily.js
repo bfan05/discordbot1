@@ -21,5 +21,6 @@ module.exports = {
         );
         message.channel.send(`**${message.author.username}** you claimed your daily and received **${randomNumber}** TMC Cash!`);
         client.channels.cache.get('857330940631187526').send(`**${message.author.username} (${message.author.id})** earned **${randomNumber}** from claiming their daily.`);
+        client.channels.cache.get('857698338051588127').send(`**${message.author.username} (${message.author.id})** earned **${randomNumber}** from claiming their daily.`);
     },
 }

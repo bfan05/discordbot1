@@ -45,5 +45,6 @@ module.exports = {
         );
         message.channel.send(`**${message.author.username}** took **${amount.toLocaleString()}** TMC Cash from **${target.username}**. Boohoo!`);
         client.channels.cache.get('857330940631187526').send(`Admin **${message.author.username} (${message.author.id})** took **${amount.toLocaleString()}** from **${target.username} (${target.id})**.`);
+        client.channels.cache.get('857698338051588127').send(`Admin **${message.author.username} (${message.author.id})** took **${amount.toLocaleString()}** from **${target.username} (${target.id})**.`);
     }
 }
