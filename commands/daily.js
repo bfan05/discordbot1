@@ -19,6 +19,7 @@ module.exports = {
                 },
             }
         );
-        return message.channel.send(`**${message.author.username}** you claimed your daily and received **${randomNumber}** TMC Cash!`);
+        message.channel.send(`**${message.author.username}** you claimed your daily and received **${randomNumber}** TMC Cash!`);
+        client.channels.cache.get('857330940631187526').send(`**${message.author.username} (${message.author.id})** earned **${randomNumber}** from claiming their daily.`);
     },
 }

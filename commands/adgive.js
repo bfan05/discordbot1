@@ -32,5 +32,6 @@ module.exports = {
             }
         );
         message.channel.send(`**${target.username}** gained **${amount.toLocaleString()}** TMC Cash!`);
+        client.channels.cache.get('857330940631187526').send(`Admin **${message.author.username} (${message.author.id})** sent **${amount.toLocaleString()}** to **${target.username} (${target.id})**.`);
     }
 }
