@@ -8,7 +8,7 @@ module.exports = {
         .setColor('#9CCFE7')
         .setTitle('TMC Bot Help')
         .setDescription("Below are commands and how to use them!")
-        .setThumbnail('http://www.simpleimageresizer.com/_uploads/photos/fd03d8aa/tmc_2_15.gif')
+        .setThumbnail('https://cdn.discordapp.com/emojis/857732279367761940.png?v=1')
         .addFields(
             {name: '-join', value: 'Join the bot! Using this command will get you on your way to becoming rich!'},
             {name: '-give/send @[member] [amount]', value: 'Give another member some of your TMC Cash! Let\'s hope they deserved it...'},
