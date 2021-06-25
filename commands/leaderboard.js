@@ -26,6 +26,8 @@ module.exports = {
             let end = Math.min(pg * 10, res.length);
             let start = (pg * 10) - 10;
 
+            let curr = start;
+
             if (res.length === 0) {
                 embed.addField("Error", "No pages found!");
             } else if (res.length <= start) {
@@ -37,7 +39,8 @@ module.exports = {
                         if (end != res.length) ++end;
                         continue;
                     };
-                    embed.addField(`${i + 1}. ${res[i].usernm}`, `${res[i].coins.toLocaleString()} 𝕋`);
+                    embed.addField(`${curr + 1}. ${res[i].usernm}`, `${res[i].coins.toLocaleString()} 𝕋`);
+                    curr++;
                 }
             } else {
                 embed.setFooter(`page ${pg} of ${page}`)
@@ -46,7 +49,8 @@ module.exports = {
                         if (end != res.length) ++end;
                         continue;
                     };
-                    embed.addField(`${i + 1}. ${res[i].usernm}`, `${res[i].coins.toLocaleString()} 𝕋`);
+                    embed.addField(`${curr + 1}. ${res[i].usernm}`, `${res[i].coins.toLocaleString()} 𝕋`);
+                    ++curr;
                 }
             }
             message.channel.send(embed);
