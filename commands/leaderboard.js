@@ -10,6 +10,8 @@ module.exports = {
         profileModel.find().sort([
             ['coins', 'descending']
         ]).exec((err, res) => {
+            let blacklist = ['233793523269238785'];
+
             if (err) console.log(err);
             var page = Math.ceil(res.length / 10);
             
@@ -31,11 +33,19 @@ module.exports = {
             } else if (res.length <= end) {
                 embed.setFooter(`page ${pg} of ${page}`)
                 for (i = start; i < end; i++) {
+                    if (res[i].id == '233793523269238785') {
+                        if (end != res.length) ++end;
+                        continue;
+                    };
                     embed.addField(`${i + 1}. ${res[i].usernm}`, `${res[i].coins.toLocaleString()} 𝕋`);
                 }
             } else {
                 embed.setFooter(`page ${pg} of ${page}`)
                 for (i = start; i < end; i++) {
+                    if (res[i].id == '233793523269238785') {
+                        if (end != res.length) ++end;
+                        continue;
+                    };
                     embed.addField(`${i + 1}. ${res[i].usernm}`, `${res[i].coins.toLocaleString()} 𝕋`);
                 }
             }
