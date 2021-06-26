@@ -50,7 +50,7 @@ module.exports = async (Discord, client, message) => {
                 const minutes_left = Math.floor((time_left - 3600 * hours_left) / 60);
                 const seconds_left = Math.floor((time_left - (3600 * hours_left + 60 * minutes_left)));
     
-                return message.channel.send(`**${message.author.username}**, please wait **${hours_left}H** **${minutes_left}M** **${seconds_left}S** to claim your daily again!`);
+                return message.channel.send(`**${message.author.username}**, your daily is not ready! Daily resets at 12:00 AM PST every day.`);
             }
         }
     
