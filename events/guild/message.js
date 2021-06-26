@@ -7,8 +7,6 @@ module.exports = async (Discord, client, message) => {
     const prefix = process.env.bot_prefix;
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-    if (message.author.id != '692851547062665317') return message.channel.send('The bot is under maintenence. It will be back up shortly!');
-
     let profileData;
     try {
         profileData = await profileModel.findOne({ userID: message.author.id });
