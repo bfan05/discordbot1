@@ -14,7 +14,7 @@ module.exports = {
             {name: '-give/send @[member] [amount]', value: 'Give another member some of your TMC Cash! Let\'s hope they deserved it...'},
             {name: '-balance/bal', value: 'Check your TMC Cash balance!'},
             {name: '-leaderboard/lb [page number]', value: 'Check the TMC Cash leaderboard! Are you #1?'},
-            {name: '-daily', value: 'Claim your daily TMC Cash! Must wait 24 hours before using again.'},
+            {name: '-daily', value: 'Claim your daily TMC Cash! Resets every day at 12:00 AM PST.'},
             {name: '-adtake @[member] [amount]', value: 'Only for admins. Take some TMC Cash from a member. No regrets!'},
             {name: '-adgive @[member] [amount]', value: 'Only for admins. Reward someone with TMC Cash!'},
             {name: '-reset @[member]', value: 'Only for admins. Someone has been naughty! Reset their cash.'},

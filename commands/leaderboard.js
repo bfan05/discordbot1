@@ -35,7 +35,7 @@ module.exports = {
             } else if (res.length <= end) {
                 embed.setFooter(`page ${pg} of ${page}`)
                 for (i = start; i < end; i++) {
-                    if (res[i].userID == '233793523269238785') {
+                    if (res[i].userID == '233793523269238785' || res[i].userID == '777641801212493826') {
                         if (end != res.length) ++end;
                         continue;
                     };
@@ -45,7 +45,7 @@ module.exports = {
             } else {
                 embed.setFooter(`page ${pg} of ${page}`)
                 for (i = start; i < end; i++) {
-                    if (res[i].userID == '233793523269238785') {
+                    if (res[i].userID == '233793523269238785' || res[i].userID == '777641801212493826') {
                         if (end != res.length) ++end;
                         continue;
                     };
