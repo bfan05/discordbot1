@@ -7,8 +7,6 @@ module.exports = async (Discord, client, message) => {
     const prefix = process.env.bot_prefix;
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-    if (message.author.id != '692851547062665317') return message.channel.send('The bot is under maintenence. It will be back up shortly!');
-
     let profileData;
     try {
         profileData = await profileModel.findOne({ userID: message.author.id });
@@ -50,7 +48,7 @@ module.exports = async (Discord, client, message) => {
                 const minutes_left = Math.floor((time_left - 3600 * hours_left) / 60);
                 const seconds_left = Math.floor((time_left - (3600 * hours_left + 60 * minutes_left)));
     
-                return message.channel.send(`**${message.author.username}**, your daily is not ready! Daily resets at 12:00 AM PST every day.`);
+                return message.channel.send(`**${message.author.username}**, your daily is not ready! Daily resets at **12:00 AM PST** every day.`);
             }
         }
     
