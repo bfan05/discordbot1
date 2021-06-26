@@ -39,7 +39,7 @@ module.exports = {
                         if (end != res.length) ++end;
                         continue;
                     };
-                    embed.addField(`${curr + 1}. ${res[i].usernm}`, `${res[i].coins.toLocaleString()} 𝕋`);
+                    embed.addField(`${curr + 1}. ${client.users.cache.find(u => u.id === `${res[i].userID}`).username}`, `${res[i].coins.toLocaleString()} 𝕋`);
                     curr++;
                 }
             } else {
@@ -49,7 +49,7 @@ module.exports = {
                         if (end != res.length) ++end;
                         continue;
                     };
-                    embed.addField(`${curr + 1}. ${res[i].usernm}`, `${res[i].coins.toLocaleString()} 𝕋`);
+                    embed.addField(`${curr + 1}. ${client.users.cache.find(u => u.id === `${res[i].userID}`).username}`, `${res[i].coins.toLocaleString()} 𝕋`);
                     ++curr;
                 }
             }
