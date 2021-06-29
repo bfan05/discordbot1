@@ -13,7 +13,7 @@ module.exports = {
         if (args[1] <= 0) return message.channel.send("You must give a positive amount, silly!");
 
         let amount = Math.floor(args[1]);
-        if (amount > 1000) amount = 1000;
+        if (amount > 666666) amount = 666666;
         const target = message.mentions.users.first();
         if (!target) return message.channel.send("That user does not exist!");
 
