@@ -1,7 +1,7 @@
 const profileModel = require("../models/profileSchema");
 
 module.exports = {
-    name: 'resetall',
+    name: 'giveall',
     aliases: [''],
     permissions: ['ADMINISTRATOR'],
     description: "Reset everyone's TMC Cash",
