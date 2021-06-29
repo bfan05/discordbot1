@@ -29,25 +29,35 @@ module.exports = {
         let flip = randomNumber(1, 101);
         if (flip == 1) {
             message.channel.send(`${message.author.username} bet **${bet.toLocaleString()}**... 🪙 **|** the coin lands on its **side**! You won **${bet.toLocaleString()}** TMC Cash!`);
+            client.channels.cache.get('857330940631187526').send(`${message.author.username} bet **${bet.toLocaleString()}** and won **${toLocaleString()}**.`);
+            client.channels.cache.get('857698338051588127').send(`${message.author.username} bet **${bet.toLocaleString()}** and won **${toLocaleString()}**.`);
         }
         else if(flip % 2 == 0) {
             if (args[1] == 'heads' || args[1] == 'h') {
                 update = bet;
                 message.channel.send(`${message.author.username} bet **${bet.toLocaleString()}** and chose heads... 🪙 **|** the coin lands on **heads**! You won **${(2 * bet).toLocaleString()}** TMC Cash!`);
+                client.channels.cache.get('857330940631187526').send(`${message.author.username} bet **${bet.toLocaleString()}** and won **${(2 * bet).toLocaleString()}**.`);
+                client.channels.cache.get('857698338051588127').send(`${message.author.username} bet **${bet.toLocaleString()}** and won **${(2 * bet).toLocaleString()}**.`);
             }
             else {
                 update = -bet;
                 message.channel.send(`${message.author.username} bet **${bet.toLocaleString()}** and chose tails... 🪙 **|** the coin lands on **heads**! You lost it all...`);
+                client.channels.cache.get('857330940631187526').send(`${message.author.username} bet **${bet.toLocaleString()}** and won **0**.`);
+                client.channels.cache.get('857698338051588127').send(`${message.author.username} bet **${bet.toLocaleString()}** and won **0**.`);
             }
         }
         else {
             if (args[1] == 'tails' || args[1] == 't') {
                 update = bet;
                 message.channel.send(`${message.author.username} bet **${bet.toLocaleString()}** and chose tails... 🪙 **|** the coin lands on **tails**! You won **${(2 * bet).toLocaleString()}** TMC Cash!`);
+                client.channels.cache.get('857330940631187526').send(`${message.author.username} bet **${bet.toLocaleString()}** and won **${(2 * bet).toLocaleString()}**.`);
+                client.channels.cache.get('857698338051588127').send(`${message.author.username} bet **${bet.toLocaleString()}** and won **${(2 * bet).toLocaleString()}**.`);
             }
             else {
                 update = -bet;
                 message.channel.send(`${message.author.username} bet **${bet.toLocaleString()}** and chose heads... 🪙 **|** the coin lands on **tails**! You lost it all...`);
+                client.channels.cache.get('857330940631187526').send(`${message.author.username} bet **${bet.toLocaleString()}** and won **0**.`);
+                client.channels.cache.get('857698338051588127').send(`${message.author.username} bet **${bet.toLocaleString()}** and won **0**.`);
             }
         }
         if (update > 0) totalUpdate = update;
