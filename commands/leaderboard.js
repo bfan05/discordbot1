@@ -26,12 +26,12 @@ module.exports = {
             let end = Math.min(pg * 10, res.length);
             let start = (pg * 10) - 10;
 
-            if (pg != 1) {
-                end -= 2;
-                start -= 2;
-            }
-
             let curr = start;
+
+            if (pg != 1) {
+                end += 2;
+                start += 2;
+            }
 
             if (res.length === 0) {
                 embed.addField("Error", "No pages found!");
