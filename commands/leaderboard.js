@@ -29,8 +29,8 @@ module.exports = {
             let curr = start;
 
             if (pg != 1) {
-                end += 2;
-                start += 2;
+                end = Math.min(res.length, end + 2);
+                start = Math.min(start + 2, res.length);
             }
 
             if (res.length === 0) {
