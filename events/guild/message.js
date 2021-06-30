@@ -51,7 +51,7 @@ module.exports = async (Discord, client, message) => {
                 if (cmd == 'daily') {
                     return message.channel.send(`**${message.author.username}**, your daily is not ready! Daily resets at **12:00 AM PST** every day.`);
                 } else {
-                    return message.channel.send(`**${message.author.username}**, please wait **${seconds_left}** before using that command again!`);
+                    return message.channel.send(`**${message.author.username}**, please wait **${seconds_left}** seconds before using that command again!`);
                 }
                 
             }
