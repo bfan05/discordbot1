@@ -7,6 +7,7 @@ function randomNumber(min, max) {
 module.exports = {
     name: 'coinflip',
     aliases: ['cf'],
+    cooldown: 10,
     permissions: [],
     description: 'Flip a coin to win some cash!',
     async execute(client, message, args, Discord, profileData) {

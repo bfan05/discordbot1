@@ -47,8 +47,13 @@ module.exports = async (Discord, client, message) => {
                 const hours_left = Math.floor(time_left / 3600);
                 const minutes_left = Math.floor((time_left - 3600 * hours_left) / 60);
                 const seconds_left = Math.floor((time_left - (3600 * hours_left + 60 * minutes_left)));
-    
-                return message.channel.send(`**${message.author.username}**, your daily is not ready! Daily resets at **12:00 AM PST** every day.`);
+                
+                if (cmd == 'daily') {
+                    return message.channel.send(`**${message.author.username}**, your daily is not ready! Daily resets at **12:00 AM PST** every day.`);
+                } else {
+                    return message.channel.send(`**${message.author.username}**, please wait **${seconds_left}** before using that command again!`);
+                }
+                
             }
         }
     
