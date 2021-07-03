@@ -10,7 +10,7 @@ module.exports = {
         .setDescription("Below are commands and how to use them!")
         .setThumbnail('https://cdn.discordapp.com/emojis/857732279367761940.png?v=1')
         .addFields(
-            {name: 'User Commands', value: ''},
+            {name: 'User Commands', value: 'Any user may use these commands!'},
             {name: '-join', value: 'Join the bot! Using this command will get you on your way to becoming rich!'},
             {name: '-give/send @[member] [amount]', value: 'Give another member some of your TMC Cash! Let\'s hope they deserved it...'},
             {name: '-balance/bal', value: 'Check your TMC Cash balance!'},
@@ -20,10 +20,10 @@ module.exports = {
             {name: '\u200B', value: '\u200B'},
             {name: 'Action Commands', value: 'hug, kiss, spank, slap, kick, throw, lick'},
             {name: '\u200B', value: '\u200B'},
-            {name: 'Admin Commands', value: ''},
-            {name: '-adtake @[member] [amount]', value: 'Only for admins. Take some TMC Cash from a member. No regrets!'},
-            {name: '-adgive @[member] [amount]', value: 'Only for admins. Reward someone with TMC Cash!'},
-            {name: '-reset @[member]', value: 'Only for admins. Someone has been naughty! Reset their cash.'},
+            {name: 'Admin Commands', value: 'Only for admins!'},
+            {name: '-adtake @[member] [amount]', value: 'Take some TMC Cash from a member. No regrets!'},
+            {name: '-adgive @[member] [amount]', value: 'Reward someone with TMC Cash!'},
+            {name: '-reset @[member]', value: 'Someone has been naughty! Reset their cash.'},
         )
         .setFooter('Created by bfan#0125');
 
