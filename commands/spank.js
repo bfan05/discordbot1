@@ -19,7 +19,7 @@ module.exports = {
         ];
 
         let gifs = [
-            'https://image.myanimelist.net/ui/OK6W_koKDTOqqqLDbIoPAhUP2TKouTIPy6TOKmAKybU',
+            'https://media1.tenor.com/images/ef5f040254c2fbf91232088b91fe2341/tenor.gif?itemid=13569259',
             'https://media1.tenor.com/images/e390c11a59f8c63b7ac7d15f70e9687f/tenor.gif',
             'https://media1.tenor.com/images/b51750728709353206263f0407f0be96/tenor.gif?itemid=16173937',
             'https://media1.tenor.com/images/2eb222b142f24be14ea2da5c84a92b08/tenor.gif?itemid=15905904',
