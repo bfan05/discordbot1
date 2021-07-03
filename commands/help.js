@@ -43,7 +43,7 @@ module.exports = {
             const newEmbed = new Discord.MessageEmbed()
             .setColor('#9CCFE7')
             .setTitle('TMC Bot Help')
-            .setDescription(`${args[0]} help ${map.get(args[0][2])}`)
+            .setDescription(`${args[0]} help ${map.get(args[0])[2]}`)
             .setThumbnail('https://cdn.discordapp.com/emojis/857732279367761940.png?v=1')
             .addFields(
                 {name: 'How to use', value: `-${map.get(args[0])[0]}`},
