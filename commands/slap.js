@@ -15,7 +15,7 @@ module.exports = {
         let values = [
             ['slaps', ' right in the face! Someone\'s been a meanie!'],
             ['gives', ' a big slap. Ouch! It looks bruised...'],
-            ['slaps', ' '],
+            ['slaps', ' with a fly swatter! That\'s definitely going to leave a mark...'],
         ];
 
         const target = message.mentions.users.first();
