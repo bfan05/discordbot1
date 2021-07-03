@@ -36,6 +36,7 @@ module.exports = {
         map.set('punch', ['punch @[member]', 'Punch another member!', '🤜']);
         map.set('throw', ['throw @[member]', 'Throw someone!', '<a:throw:860952026590871582>']);
         map.set('lick', ['lick @[member]', 'Give someone a wet lick!', '👅']);
+        map.set('spank', ['spank @[member]', 'Give someone a fat spank!', '<a:ANIspank:813055630209843215>']);
 
         if (!map.has(args[0])) return message.channel.send('That command does not exist!');
         else {

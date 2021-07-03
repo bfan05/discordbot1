@@ -19,9 +19,10 @@ module.exports = {
         ];
 
         let gifs = [
-            'https://i.pinimg.com/originals/fe/39/cf/fe39cfc3be04e3cbd7ffdcabb2e1837b.gif',
-            'https://i.imgur.com/fm49srQ.gif',
-            'http://i1280.photobucket.com/albums/a489/Lilyfied/Anime%20Gif/slapgif_zps5164a18e.gif'
+            'https://media.tenor.co/videos/4b637afdfee44b81fe9cc8094769cc76/mp4',
+            'https://media.tenor.co/videos/ca0708e443b32e78f3fd48589bc0a130/mp4',
+            'https://media.tenor.co/videos/f8b498ef86f4fbc4f1eed5a11a15b50e/mp4',
+            'https://media.tenor.co/videos/a5274a1ff8913795bb865075b4b57acf/mp4',
         ]
 
         const target = message.mentions.users.first();
