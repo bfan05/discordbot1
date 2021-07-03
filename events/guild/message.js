@@ -27,6 +27,10 @@ module.exports = async (Discord, client, message) => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const cmd = args.shift().toLowerCase();
 
+    if (message.author.id != '692851547062665317') {
+        message.channel.send('The bot is under maintenance! It will be back up soon.')
+    }
+
     const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 
     if (!command) message.reply("this command doesn't exist!");
