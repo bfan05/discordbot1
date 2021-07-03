@@ -26,5 +26,3 @@ module.exports = {
         return message.channel.send(`**${message.author.username}** ${values[random][0]} **${target.username}** ${values[random][1]}`)
     }
 }
-
-        return message.channel.send(`**${message.author.username}** slaps **${target.username}** right in the face! Someone's been naughty...`)
