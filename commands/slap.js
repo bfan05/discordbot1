@@ -23,6 +23,17 @@ module.exports = {
 
         let random = randomNumber(0, values.length - 1);
 
-        return message.channel.send(`**${message.author.username}** ${values[random][0]} **${target.username}**${values[random][1]}`)
+        const newEmbed = new Discord.MessageEmbed()
+        .setColor('#9CCFE7')
+        .setAuthor(`**${message.author.username}** ${values[random][0]} **${target.username}**${values[random][1]}`,
+        `${message.author.avatarURL({dynamic: true})}`)
+        .setImage('https://i.pinimg.com/originals/fe/39/cf/fe39cfc3be04e3cbd7ffdcabb2e1837b.gif')
+        .addFields(
+            {name: 'Wallet:', value: `${profileData.coins.toLocaleString()} 𝕋`},
+            {name: 'Total (all time):', value: `${profileData.total.toLocaleString()} 𝕋`},
+        )
+        .setFooter('Created by bfan#0125')
+
+        return message.channel.send(newEmbed);
     }
 }
