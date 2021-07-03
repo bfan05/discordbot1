@@ -21,7 +21,8 @@ module.exports = {
         let gifs = [
             'https://media1.tenor.com/images/a3d2e38bed3d3ee648328b37409c4d87/tenor.gif?itemid=13886203',
             'https://i.imgur.com/DylehYr.gif',
-            'https://i.pinimg.com/originals/81/76/9e/81769ee6622b5396d1489fb4667fd20a.gif'
+            'https://i.pinimg.com/originals/81/76/9e/81769ee6622b5396d1489fb4667fd20a.gif',
+            'https://media1.tenor.com/images/c4f68fbbec3c96193386e5fcc5429b89/tenor.gif?itemid=13451325'
         ]
 
         const target = message.mentions.users.first();

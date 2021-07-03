@@ -21,7 +21,8 @@ module.exports = {
         let gifs = [
             'http://25.media.tumblr.com/tumblr_ma7l17EWnk1rq65rlo1_500.gif',
             'https://i.imgur.com/r9aU2xv.gif?noredirect',
-            'https://thumbs.gfycat.com/AlienatedUnawareArcherfish-size_restricted.gif'
+            'https://thumbs.gfycat.com/AlienatedUnawareArcherfish-size_restricted.gif',
+            'https://i.imgur.com/3OzmqMS.gif'
         ]
 
         const target = message.mentions.users.first();

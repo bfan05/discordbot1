@@ -21,7 +21,8 @@ module.exports = {
         let gifs = [
             'https://media1.tenor.com/images/d0cd64030f383d56e7edc54a484d4b8d/tenor.gif?itemid=17382422',
             'https://i.imgur.com/lmY5soG.gif',
-            'https://www.icegif.com/wp-content/uploads/anime-kiss-icegif-1.gif'
+            'https://www.icegif.com/wp-content/uploads/anime-kiss-icegif-1.gif',
+            'https://37.media.tumblr.com/42f96e0adb59440843c94e45650afd19/tumblr_n5mbsq844s1tzpao0o1_500.gif'
         ]
 
         const target = message.mentions.users.first();

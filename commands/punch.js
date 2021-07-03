@@ -22,7 +22,8 @@ module.exports = {
         let gifs = [
             'https://media1.tenor.com/images/31686440e805309d34e94219e4bedac1/tenor.gif?itemid=4790446',
             'https://i.pinimg.com/originals/8a/ab/09/8aab09880ff9226b1c73ee4c2ddec883.gif',
-            'https://media1.giphy.com/media/yo3TC0yeHd53G/200.gif'
+            'https://media1.giphy.com/media/yo3TC0yeHd53G/200.gif',
+            'https://thumbs.gfycat.com/ImperfectFrightenedFoal-size_restricted.gif',
         ]
 
         const target = message.mentions.users.first();

@@ -22,7 +22,7 @@ module.exports = {
             'https://i.pinimg.com/originals/fe/39/cf/fe39cfc3be04e3cbd7ffdcabb2e1837b.gif',
             'https://i.imgur.com/fm49srQ.gif',
             'http://i1280.photobucket.com/albums/a489/Lilyfied/Anime%20Gif/slapgif_zps5164a18e.gif',
-            'https://bit.ly/3hz0TgU',
+            'https://i.pinimg.com/originals/68/de/67/68de679cc20000570e8a7d9ed9218cd3.gif',
         ]
 
         const target = message.mentions.users.first();
