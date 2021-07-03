@@ -19,10 +19,10 @@ module.exports = {
         ];
 
         let gifs = [
-            'https://media.tenor.co/videos/4b637afdfee44b81fe9cc8094769cc76/mp4',
-            'https://media.tenor.co/videos/ca0708e443b32e78f3fd48589bc0a130/mp4',
-            'https://media.tenor.co/videos/f8b498ef86f4fbc4f1eed5a11a15b50e/mp4',
-            'https://media.tenor.co/videos/a5274a1ff8913795bb865075b4b57acf/mp4',
+            'https://image.myanimelist.net/ui/OK6W_koKDTOqqqLDbIoPAhUP2TKouTIPy6TOKmAKybU',
+            'https://media1.tenor.com/images/e390c11a59f8c63b7ac7d15f70e9687f/tenor.gif',
+            'https://media1.tenor.com/images/b51750728709353206263f0407f0be96/tenor.gif?itemid=16173937',
+            'https://media1.tenor.com/images/2eb222b142f24be14ea2da5c84a92b08/tenor.gif?itemid=15905904',
         ]
 
         const target = message.mentions.users.first();
