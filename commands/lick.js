@@ -5,18 +5,18 @@ function randomNumber(min, max) {
 }
 
 module.exports = {
-    name: 'hug',
+    name: 'lick',
     aliases: [''],
     permissions: [],
-    description: 'Hug someone.',
+    description: 'Lick someone.',
     async execute(client, message, args, Discord, profileData) {
-        if (!args.length) return message.channel.send('You need to mention a member to hug them!');
-
         let values = [
-            ['gives', 'a bear hug! How cute!'],
-            ['hugs', '. Both agree elle is awful.'],
-            ['hugs', 'and crushes their bones!'],
+            ['gives', 'a wet lick... yummy'],
+            ['licks', 'right on the cheek. Someone\'s getting hydrated...'],
+            ['licks', '! Ewww!'],
+            ['gives', 'a wet lick. Better spit that hair out!'],
         ];
+        if (!args.length) return message.channel.send('You need to mention a member to lick them!');
 
         const target = message.mentions.users.first();
         if (!target) return message.channel.send("That user does not exist!");
