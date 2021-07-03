@@ -8,7 +8,7 @@ module.exports = {
             const newEmbed = new Discord.MessageEmbed()
             .setColor('#9CCFE7')
             .setTitle('TMC Bot Help')
-            .setDescription("Below are commands and how to use them!")
+            .setDescription("Below are TMC Bot commands! Type -help [command] for command specific help.")
             .setThumbnail('https://cdn.discordapp.com/emojis/857732279367761940.png?v=1')
             .addFields(
                 {name: '🔧 User Commands', value: '``join, give, balance, leaderboard, daily, coinflip``'},
