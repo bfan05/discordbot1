@@ -11,10 +11,10 @@ module.exports = {
     description: 'Throw someone.',
     async execute(client, message, args, Discord, profileData) {
         let values = [
-            ['throws', 'into the ocean! Have fun drowning!'],
-            ['chucks', 'across the room. Sayonara, dumbass!'],
-            ['throws', 'into a garbage can! Better go take a shower fast...'],
-            ['catapults', 'across the room! We\'re going to need some house renovation...']
+            ['throws', ' into the ocean! Have fun drowning!'],
+            ['chucks', ' across the room. Sayonara, dumbass!'],
+            ['throws', ' into a garbage can! Better go take a shower fast...'],
+            ['catapults', ' across the room! We\'re going to need some house renovation...']
         ];
         if (!args.length) return message.channel.send('You need to mention a member to throw them!');
 

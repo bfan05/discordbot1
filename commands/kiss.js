@@ -13,9 +13,9 @@ module.exports = {
         if (!args.length) return message.channel.send('You need to mention a member to kiss them!');
 
         let values = [
-            ['kisses', 'right on the lips. Awww... you guys are adorable'],
+            ['kisses', ' right on the lips. Awww... you guys are adorable'],
             ['and', '\'s lips intertwine in a hot mess. Look at them go!'],
-            ['gives', 'a big smooch. If only their breath didn\'t smell that bad...'],
+            ['gives', ' a big smooch. If only their breath didn\'t smell that bad...'],
         ];
 
         const target = message.mentions.users.first();
@@ -23,6 +23,6 @@ module.exports = {
 
         let random = randomNumber(0, values.length - 1);
 
-        return message.channel.send(`**${message.author.username}** ${values[random][0]} **${target.username}** ${values[random][1]}`)
+        return message.channel.send(`**${message.author.username}** ${values[random][0]} **${target.username}**${values[random][1]}`)
     }
 }

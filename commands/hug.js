@@ -13,9 +13,9 @@ module.exports = {
         if (!args.length) return message.channel.send('You need to mention a member to hug them!');
 
         let values = [
-            ['gives', 'a bear hug! How cute!'],
+            ['gives', ' a bear hug! How cute!'],
             ['hugs', '. Both agree elle is awful.'],
-            ['hugs', 'and crushes their bones!'],
+            ['hugs', ' and crushes their bones!'],
         ];
 
         const target = message.mentions.users.first();

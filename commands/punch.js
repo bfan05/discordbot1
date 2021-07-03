@@ -13,9 +13,10 @@ module.exports = {
         if (!args.length) return message.channel.send('You need to mention a member to punch them!');
 
         let values = [
-            ['gives', 'a sucker punch right in the stomach! Wham!'],
+            ['gives', ' a sucker punch right in the stomach! Wham!'],
             ['punches', '! Look at them fly...'],
-            ['punches', 'and knocks them out. KO!'],
+            ['punches', ' and knocks them out. KO!'],
+            ['punches', ' right in the head! A dental implant may be in the near future...']
         ];
 
         const target = message.mentions.users.first();

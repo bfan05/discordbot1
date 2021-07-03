@@ -11,10 +11,10 @@ module.exports = {
     description: 'Lick someone.',
     async execute(client, message, args, Discord, profileData) {
         let values = [
-            ['gives', 'a wet lick... yummy'],
-            ['licks', 'right on the cheek. Someone\'s getting hydrated...'],
+            ['gives', ' a wet lick... yummy'],
+            ['licks', ' right on the cheek. Someone\'s getting hydrated...'],
             ['licks', '! Ewww!'],
-            ['gives', 'a wet lick. Better spit that hair out!'],
+            ['gives', ' a wet lick. Better spit that hair out!'],
         ];
         if (!args.length) return message.channel.send('You need to mention a member to lick them!');
 
