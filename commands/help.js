@@ -12,7 +12,7 @@ module.exports = {
             .setThumbnail('https://cdn.discordapp.com/emojis/857732279367761940.png?v=1')
             .addFields(
                 {name: '🔧 User Commands', value: '``join, give, balance, leaderboard, daily, coinflip``'},
-                {name: '🤜 Action Commands', value: '``hug, kiss, slap, punch, throw, lick``'},
+                {name: '🤜 Action Commands', value: '``hug, kiss, slap, punch, throw, lick, spank``'},
                 {name: '👮 Admin Commands', value: '``adtake, adgive, reset``'},
             )
             .setFooter('Created by bfan#0125');
@@ -36,7 +36,7 @@ module.exports = {
         map.set('punch', ['punch @[member]', 'Punch another member!', '🤜']);
         map.set('throw', ['throw @[member]', 'Throw someone!', '<a:throw:860952026590871582>']);
         map.set('lick', ['lick @[member]', 'Give someone a wet lick!', '👅']);
-        map.set('spank', ['spank @[member]', 'Give someone a fat spank!', '<a:ANIspank:813055630209843215>']);
+        map.set('spank', ['spank @[member]', 'Give someone a fat spank!', '<a:ANIspank:861024140383092746>']);
 
         if (!map.has(args[0])) return message.channel.send('That command does not exist!');
         else {
