@@ -12,7 +12,7 @@ module.exports = {
             .setThumbnail('https://cdn.discordapp.com/emojis/857732279367761940.png?v=1')
             .addFields(
                 {name: '🔧 User Commands', value: '``join, give, balance, leaderboard, daily, coinflip``'},
-                {name: '🤜 Action Commands', value: '``hug, kiss, spank, slap, punch, throw, lick``'},
+                {name: '🤜 Action Commands', value: '``hug, kiss, slap, punch, throw, lick``'},
                 {name: '👮 Admin Commands', value: '``adtake, adgive, reset``'},
             )
             .setFooter('Created by bfan#0125');
@@ -32,7 +32,6 @@ module.exports = {
         map.set('reset', ['reset @[member]', 'Someone has been naughty! Reset their cash.', '']);
         map.set('hug', ['hug @[member]', 'Hug someone!', '🤗']);
         map.set('kiss', ['kiss @[member]', 'Give someone a big kiss!', '💋']);
-        map.set('spank', ['spank @[member]', 'Give someone a fat spank!', '']);
         map.set('slap', ['slap @[member]', 'Slap someone!', '<a:TMC_MaiSlapOwO:834498233262800896>']);
         map.set('punch', ['punch @[member]', 'Punch another member!', '🤜']);
         map.set('throw', ['throw @[member]', 'Throw someone!', '<a:throw:860952026590871582>']);

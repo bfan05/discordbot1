@@ -18,11 +18,25 @@ module.exports = {
         ];
         if (!args.length) return message.channel.send('You need to mention a member to lick them!');
 
+        let gifs = [
+            'https://media1.tenor.com/images/a3d2e38bed3d3ee648328b37409c4d87/tenor.gif?itemid=13886203',
+            'https://i.imgur.com/DylehYr.gif',
+            'https://i.pinimg.com/originals/81/76/9e/81769ee6622b5396d1489fb4667fd20a.gif'
+        ]
+
         const target = message.mentions.users.first();
         if (!target) return message.channel.send("That user does not exist!");
 
         let random = randomNumber(0, values.length - 1);
+        let randomImage = randomNumber(0, gifs.length - 1);
 
-        return message.channel.send(`**${message.author.username}** ${values[random][0]} **${target.username}**${values[random][1]}`)
+        const newEmbed = new Discord.MessageEmbed()
+        .setColor('#9CCFE7')
+        .setAuthor(`${message.author.username} ${values[random][0]} ${target.username}${values[random][1]}`,
+        `${message.author.avatarURL({dynamic: true})}`)
+        .setImage(`${gifs[randomImage]}`)
+        .setFooter('Created by bfan#0125')
+
+        return message.channel.send(newEmbed);
     }
 }

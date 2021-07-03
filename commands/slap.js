@@ -21,7 +21,8 @@ module.exports = {
         let gifs = [
             'https://i.pinimg.com/originals/fe/39/cf/fe39cfc3be04e3cbd7ffdcabb2e1837b.gif',
             'https://i.imgur.com/fm49srQ.gif',
-            'http://i1280.photobucket.com/albums/a489/Lilyfied/Anime%20Gif/slapgif_zps5164a18e.gif'
+            'http://i1280.photobucket.com/albums/a489/Lilyfied/Anime%20Gif/slapgif_zps5164a18e.gif',
+            'https://bit.ly/3hz0TgU',
         ]
 
         const target = message.mentions.users.first();

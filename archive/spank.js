@@ -18,11 +18,25 @@ module.exports = {
             ['spanks', ' across their bottom! That\'s going to be sore for quite some time.'],
         ];
 
+        let gifs = [
+            'https://i.pinimg.com/originals/fe/39/cf/fe39cfc3be04e3cbd7ffdcabb2e1837b.gif',
+            'https://i.imgur.com/fm49srQ.gif',
+            'http://i1280.photobucket.com/albums/a489/Lilyfied/Anime%20Gif/slapgif_zps5164a18e.gif'
+        ]
+
         const target = message.mentions.users.first();
         if (!target) return message.channel.send("That user does not exist!");
 
         let random = randomNumber(0, values.length - 1);
+        let randomImage = randomNumber(0, gifs.length - 1);
 
-        return message.channel.send(`**${message.author.username}** ${values[random][0]} **${target.username}**${values[random][1]}`)
+        const newEmbed = new Discord.MessageEmbed()
+        .setColor('#9CCFE7')
+        .setAuthor(`${message.author.username} ${values[random][0]} ${target.username}${values[random][1]}`,
+        `${message.author.avatarURL({dynamic: true})}`)
+        .setImage(`${gifs[randomImage]}`)
+        .setFooter('Created by bfan#0125')
+
+        return message.channel.send(newEmbed);
     }
 }

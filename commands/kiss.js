@@ -18,11 +18,25 @@ module.exports = {
             ['gives', ' a big smooch. If only their breath didn\'t smell that bad...'],
         ];
 
+        let gifs = [
+            'https://media1.tenor.com/images/d0cd64030f383d56e7edc54a484d4b8d/tenor.gif?itemid=17382422',
+            'https://i.imgur.com/lmY5soG.gif',
+            'https://www.icegif.com/wp-content/uploads/anime-kiss-icegif-1.gif'
+        ]
+
         const target = message.mentions.users.first();
         if (!target) return message.channel.send("That user does not exist!");
 
         let random = randomNumber(0, values.length - 1);
+        let randomImage = randomNumber(0, gifs.length - 1);
 
-        return message.channel.send(`**${message.author.username}** ${values[random][0]} **${target.username}**${values[random][1]}`)
+        const newEmbed = new Discord.MessageEmbed()
+        .setColor('#9CCFE7')
+        .setAuthor(`${message.author.username} ${values[random][0]} ${target.username}${values[random][1]}`,
+        `${message.author.avatarURL({dynamic: true})}`)
+        .setImage(`${gifs[randomImage]}`)
+        .setFooter('Created by bfan#0125')
+
+        return message.channel.send(newEmbed);
     }
 }
