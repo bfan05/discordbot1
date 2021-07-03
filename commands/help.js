@@ -12,16 +12,16 @@ module.exports = {
             .setThumbnail('https://cdn.discordapp.com/emojis/857732279367761940.png?v=1')
             .addFields(
                 {name: 'User Commands', value: '``join, give, balance, leaderboard, daily, coinflip``'},
-                {name: 'Action Commands', value: '``hug, kiss, spank, slap, kick, throw, lick``'},
+                {name: 'Action Commands', value: '``hug, kiss, spank, slap, punch, throw, lick``'},
                 {name: 'Admin Commands', value: '``adtake, adgive, reset``'},
             )
             .setFooter('Created by bfan#0125');
 
-            message.channel.send(newEmbed);
+            return message.channel.send(newEmbed);
         }
 
         let map = new Map();
-        map.set('join', ['-join', 'Join the bot! Using this command will get you on your way to becoming rich!'])
+        map.set('join', ['join', 'Join the bot! Using this command will get you on your way to becoming rich!'])
         map.set('give', ['give/send @[member] [amount]', 'Give another member some of your TMC Cash! Let\'s hope they deserved it...']);
         map.set('balance', ['balance/bal', 'Check your TMC Cash balance!']);
         map.set('leaderboard', ['leaderboard/lb [page number]', 'Check the TMC Cash leaderboard! Are you #1?']);
@@ -30,6 +30,13 @@ module.exports = {
         map.set('adtake', ['adtake @[member] [amount]', 'Take some TMC Cash from a member. No regrets!']);
         map.set('adgive', ['adgive @[member] [amount]', 'Reward someone with TMC Cash!']);
         map.set('reset', ['reset @[member]', 'Someone has been naughty! Reset their cash.']);
+        map.set('hug', ['hug @[member]', 'Hug someone!']);
+        map.set('kiss', ['kiss @[member]', 'Give someone a big kiss!']);
+        map.set('spank', ['spank @[member]', 'Give someone a fat spank!']);
+        map.set('slap', ['slap @[member]', 'Slap someone!']);
+        map.set('punch', ['punch @[member]', 'Punch another member!']);
+        map.set('throw', ['throw @[member]', 'Throw someone!']);
+        map.set('lick', ['lick @[member]', 'Give someone a wet lick!']);
 
         if (!map.has(args[0])) return message.channel.send('That command does not exist!');
         else {
