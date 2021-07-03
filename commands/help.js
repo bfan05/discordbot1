@@ -15,10 +15,11 @@ module.exports = {
             {name: '-balance/bal', value: 'Check your TMC Cash balance!'},
             {name: '-leaderboard/lb [page number]', value: 'Check the TMC Cash leaderboard! Are you #1?'},
             {name: '-daily', value: 'Claim your daily TMC Cash! Resets every day at 12:00 AM PST.'},
+            {name: '-coinflip/cf [amount] [h/t]', value: 'Coinflip some TMC Cash and get rich!'},
+            {name: 'action commands', value: 'hug, kiss, peck, spank, slap, kick, throw, lick, nom'},
             {name: '-adtake @[member] [amount]', value: 'Only for admins. Take some TMC Cash from a member. No regrets!'},
             {name: '-adgive @[member] [amount]', value: 'Only for admins. Reward someone with TMC Cash!'},
             {name: '-reset @[member]', value: 'Only for admins. Someone has been naughty! Reset their cash.'},
-            {name: '-resetall', value: 'Only for admins. Reset everyone and enjoy the chaos!'},
         )
         .setFooter('Created by bfan#0125');
 
