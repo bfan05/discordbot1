@@ -13,7 +13,7 @@ module.exports = {
         if (!args.length) return message.channel.send('You need to mention a member to give them a peck!');
 
         let values = [
-            ['gives', 'a quick peck on the cheek.'],
+            ['gives', ' a quick peck on the cheek.'],
         ];
 
         const target = message.mentions.users.first();
@@ -21,6 +21,6 @@ module.exports = {
 
         let random = randomNumber(0, values.length - 1);
 
-        return message.channel.send(`**${message.author.username}** ${values[random][0]} **${target.username}** ${values[random][1]}`)
+        return message.channel.send(`**${message.author.username}** ${values[random][0]} **${target.username}**${values[random][1]}`)
     }
 }

@@ -24,6 +24,6 @@ module.exports = {
 
         let random = randomNumber(0, values.length - 1);
 
-        return message.channel.send(`**${message.author.username}** ${values[random][0]} **${target.username}** ${values[random][1]}`)
+        return message.channel.send(`**${message.author.username}** ${values[random][0]} **${target.username}**${values[random][1]}`)
     }
 }
