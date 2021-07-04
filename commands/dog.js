@@ -67,7 +67,7 @@ module.exports = {
                     },
                 }
             );
-            message.channel.send(`**${message.author.username}** gave **${amount.toLocaleString()}** two new doggies!`);
+            message.channel.send(`**${message.author.username}** gave **${target.username}** two new doggies!`);
         }
     }
 }
