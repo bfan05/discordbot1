@@ -1,7 +1,7 @@
 const profileModel = require("../models/profileSchema");
 
 module.exports = {
-    name: 'adcollectible',
+    name: 'addcollectible',
     aliases: [''],
     permissions: ['ADMINISTRATOR'],
     description: "Add a collectible",
