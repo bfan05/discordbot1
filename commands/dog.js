@@ -43,7 +43,7 @@ module.exports = {
             if (data.dogs <= 0) return message.channel.send('You don\'t have any dogs to give!');
 
             if (target.id == message.author.id) {
-                message.channel.send(`**${target.username}** gave **${amount.toLocaleString()}** a dog to themself...`);
+                message.channel.send(`**${target.username}** gave a dog to themself...`);
                 return;
             }
 
