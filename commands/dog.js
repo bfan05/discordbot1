@@ -30,7 +30,7 @@ module.exports = {
                         },
                     }
                 );
-                return message.channel.send(`${message.author.username} gained one dog!`);
+                return message.channel.send(`**${message.author.username}** gained one dog!`);
             }
             const data = await profileModel.findOne({ userID: message.author.id });
 
