@@ -3,7 +3,7 @@ module.exports = {
     aliases: [''],
     permissions: [],
     description: 'Check the number of dogs you own!',
-    execute(client, message, args, Discord, profileData) {
+    async execute(client, message, args, Discord, profileData) {
         if (!args[0]) {
             const newEmbed = new Discord.MessageEmbed()
             .setColor('#9CCFE7')
