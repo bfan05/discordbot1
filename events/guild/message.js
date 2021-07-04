@@ -17,6 +17,7 @@ module.exports = async (Discord, client, message) => {
                 usernm: message.author.username,
                 coins: 0,
                 total: 0,
+                dogs: 0,
             });
             profile.save();
         }

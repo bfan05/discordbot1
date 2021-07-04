@@ -7,6 +7,7 @@ module.exports = async(Discord, client, guildMember) => {
         usernm: guildMember.user.username,
         coins: 0,
         total: 0,
+        dogs: 0,
     });
     profile.save();
 }
