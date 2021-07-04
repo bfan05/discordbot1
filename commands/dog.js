@@ -1,3 +1,5 @@
+const profileModel = require("../models/profileSchema");
+
 module.exports = {
     name: 'dog',
     aliases: [''],
@@ -28,7 +30,7 @@ module.exports = {
                         },
                     }
                 );
-                return;
+                return message.channel.send(`${message.author.username} gained one dog!`);
             }
             const data = await profileModel.findOne({ userID: message.author.id });
 
