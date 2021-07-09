@@ -10,10 +10,8 @@ module.exports = {
         profileModel.find().sort([
             ['coins', 'descending']
         ]).exec((err, res) => {
-            let blacklist = ['233793523269238785'];
-
             if (err) console.log(err);
-            var page = Math.ceil(res.length / 10);
+            var page = Math.ceil((res.length - 2) / 10);
             
             let embed = new Discord.MessageEmbed();
             embed.setColor('#9CCFE7');
