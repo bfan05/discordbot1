@@ -10,7 +10,7 @@ module.exports = {
         if (!args[0]) {
             const newEmbed = new Discord.MessageEmbed()
             .setColor('#9CCFE7')
-            .setAuthor(`${message.author.username}'s dogs`, `${message.author.avatarURL({dynamic: true})}`)
+            .setAuthor(`${message.author.username}'s dogs 🐕`, `${message.author.avatarURL({dynamic: true})}`)
             .setThumbnail('https://media1.tenor.com/images/dd3e50795cf1a47f053382dfed472485/tenor.gif?itemid=12932553')
             .addFields(
                 {name: 'Dogs:', value: `${profileData.dogs.toLocaleString()}`},

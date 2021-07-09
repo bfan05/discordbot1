@@ -18,6 +18,7 @@ module.exports = async (Discord, client, message) => {
                 coins: 0,
                 total: 0,
                 dogs: 0,
+                copperkey: 0,
             });
             profile.save();
         }
@@ -28,9 +29,9 @@ module.exports = async (Discord, client, message) => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const cmd = args.shift().toLowerCase();
 
-    /*if (message.author.id != '692851547062665317') {
+    if (message.author.id != '692851547062665317' && message.author.id != '777641801212493826') {
         return message.channel.send('The bot is under maintenance! It will be back up soon.')
-    }*/
+    }
 
     const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 

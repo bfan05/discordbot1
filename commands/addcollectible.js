@@ -9,7 +9,7 @@ module.exports = {
         const filter = {};
         const update = {
             $set: {
-                dogs: 0,
+                copperkey: 0,
             },
         };
         const result = await profileModel.updateMany(filter, update);
