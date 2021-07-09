@@ -37,27 +37,24 @@ module.exports = {
                         dmchannel.send("I'm sorry, that answer is incorrect.");
                     }
                 })
-                collector.on('end', collected => {
-                    if (collected.size == 0) dmchannel.send("Time's up!")
-                })
-
-                if (!correct) {
-                    message.channel.send('hello');
-                    return;
-                }
-    
-                const response = await profileModel.findOneAndUpdate(
-                    {
-                        userID: message.author.id,
-                    }, 
-                    {
-                        $inc: {
-                            copperkey: 1,
-                        },
-                    }
-                );
-                message.channel.send('updated');
             })
+
+            if (!correct) {
+                message.channel.send('hello');
+                return;
+            }
+
+            const response = await profileModel.findOneAndUpdate(
+                {
+                    userID: message.author.id,
+                }, 
+                {
+                    $inc: {
+                        copperkey: 1,
+                    },
+                }
+            );
+            message.channel.send('updated');
         }
         else {
             if (message.author.id != '777641801212493826') {
