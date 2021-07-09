@@ -2,7 +2,7 @@ const profileModel = require("../models/profileSchema");
 
 module.exports = {
     name: 'copperkey',
-    aliases: ['copkey'],
+    aliases: [],
     cooldown: 10,
     permissions: [],
     description: 'Check the number of copper keys you own!',

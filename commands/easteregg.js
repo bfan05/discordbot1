@@ -1,8 +1,8 @@
 const profileModel = require("../models/profileSchema");
 
 module.exports = {
-    name: 'easteregg',
-    aliases: ['egg'],
+    name: 'arty',
+    aliases: [],
     cooldown: 10,
     permissions: [],
     description: 'Check the number of easter eggs you own!',

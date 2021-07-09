@@ -1,8 +1,8 @@
 const profileModel = require("../models/profileSchema");
 
 module.exports = {
-    name: 'jadekey',
-    aliases: ['jkey'],
+    name: 'keyjade',
+    aliases: [],
     cooldown: 10,
     permissions: [],
     description: 'Check the number of jade keys you own!',
