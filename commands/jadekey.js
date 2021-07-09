@@ -1,20 +1,20 @@
 const profileModel = require("../models/profileSchema");
 
 module.exports = {
-    name: 'crystalkey',
-    aliases: ['cryskey'],
+    name: 'jadekey',
+    aliases: ['jkey'],
     permissions: [],
-    description: 'Check the number of crystal keys you own!',
+    description: 'Check the number of jade keys you own!',
     async execute(client, message, args, Discord, profileData) {
         const data = await profileModel.findOne({ userID: message.author.id });
 
         if (!args[0] && data.copperkey > 0) {
             const newEmbed = new Discord.MessageEmbed()
             .setColor('#9CCFE7')
-            .setAuthor(`${message.author.username}'s Crystal Keys`, `${message.author.avatarURL({dynamic: true})}`)
-            .setThumbnail('https://media.discordapp.net/attachments/827223677049110552/863099092119978024/Crystal_key-removebg-preview.png')
+            .setAuthor(`${message.author.username}'s Jade Keys`, `${message.author.avatarURL({dynamic: true})}`)
+            .setThumbnail('https://media.discordapp.net/attachments/827223677049110552/863101542802391050/Jade_key-removebg-preview.png')
             .addFields(
-                {name: 'Crystal Keys:', value: `${profileData.crystalkey.toLocaleString()}`},
+                {name: 'Jade Keys:', value: `${profileData.jadekey.toLocaleString()}`},
             )
             .setFooter('Created by bfan#0125')
 
@@ -24,13 +24,13 @@ module.exports = {
         else if (!args[0] && data.copperkey == 0) {
             let correct = false;
 
-            message.author.send("You have discovered the crystal key! If you want it, first answer this question: 2112");
+            message.author.send("You have discovered the jade key! If you want it, first answer this question: How many did you collect to blow the whistle?");
             message.author.createDM().then(dmchannel => {
                 const collector = new Discord.MessageCollector(dmchannel, m => m.author.id === message.author.id, { max: 1, time: 10000 });
                 collector.on('collect', message => {
-                    if (message.content.toLowerCase() == "rush") {
+                    if (message.content.toLowerCase() == "19") {
                         correct = true;
-                        dmchannel.send(`Congratulations! You have received a shiny crystal key!`)
+                        dmchannel.send(`Congratulations! You have received a shiny jade key!`)
                     } else {
                         dmchannel.send("I'm sorry, that answer is incorrect.");
                     }
@@ -51,7 +51,7 @@ module.exports = {
                     }, 
                     {
                         $inc: {
-                            crystalkey: 1,
+                            jadekey: 1,
                         },
                     }
                 );
@@ -73,11 +73,11 @@ module.exports = {
                 }, 
                 {
                     $inc: {
-                        crystalkey: 1,
+                        jadekey: 1,
                     },
                 }
             );
-            message.channel.send(`**${message.author.username}** gave **${target.username}** a shiny crystal key!`);
+            message.channel.send(`**${message.author.username}** gave **${target.username}** a shiny jade key!`);
         }
     }
 }

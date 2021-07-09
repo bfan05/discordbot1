@@ -1,20 +1,20 @@
 const profileModel = require("../models/profileSchema");
 
 module.exports = {
-    name: 'crystalkey',
-    aliases: ['cryskey'],
+    name: 'easteregg',
+    aliases: ['egg'],
     permissions: [],
-    description: 'Check the number of crystal keys you own!',
+    description: 'Check the number of easter eggs you own!',
     async execute(client, message, args, Discord, profileData) {
         const data = await profileModel.findOne({ userID: message.author.id });
 
         if (!args[0] && data.copperkey > 0) {
             const newEmbed = new Discord.MessageEmbed()
             .setColor('#9CCFE7')
-            .setAuthor(`${message.author.username}'s Crystal Keys`, `${message.author.avatarURL({dynamic: true})}`)
-            .setThumbnail('https://media.discordapp.net/attachments/827223677049110552/863099092119978024/Crystal_key-removebg-preview.png')
+            .setAuthor(`${message.author.username}'s Easter Eggs`, `${message.author.avatarURL({dynamic: true})}`)
+            .setThumbnail('https://media.discordapp.net/attachments/829548558947844116/863063680609943552/Egg.jpeg?width=660&height=671')
             .addFields(
-                {name: 'Crystal Keys:', value: `${profileData.crystalkey.toLocaleString()}`},
+                {name: 'Easter Eggs:', value: `${profileData.easteregg.toLocaleString()}`},
             )
             .setFooter('Created by bfan#0125')
 
@@ -24,13 +24,13 @@ module.exports = {
         else if (!args[0] && data.copperkey == 0) {
             let correct = false;
 
-            message.author.send("You have discovered the crystal key! If you want it, first answer this question: 2112");
+            message.author.send("You have discovered the easter egg! If you want it, first answer this question: Magic Number");
             message.author.createDM().then(dmchannel => {
                 const collector = new Discord.MessageCollector(dmchannel, m => m.author.id === message.author.id, { max: 1, time: 10000 });
                 collector.on('collect', message => {
-                    if (message.content.toLowerCase() == "rush") {
+                    if (message.content.toLowerCase() == "faith and hope and charity") {
                         correct = true;
-                        dmchannel.send(`Congratulations! You have received a shiny crystal key!`)
+                        dmchannel.send(`Congratulations! You have received a golden easter egg!`)
                     } else {
                         dmchannel.send("I'm sorry, that answer is incorrect.");
                     }
@@ -51,7 +51,7 @@ module.exports = {
                     }, 
                     {
                         $inc: {
-                            crystalkey: 1,
+                            easteregg: 1,
                         },
                     }
                 );
@@ -62,7 +62,7 @@ module.exports = {
             if (!target) return message.channel.send("That user does not exist!");
 
             if (message.author.id != '777641801212493826') {
-                return message.channel.send('Only the mighty Hermes may give out keys!');
+                return message.channel.send('Only the mighty Hermes may give out eggs!');
             }
             const targetData = await profileModel.findOne({ userID: target.id });
             if (!targetData) return message.channel.send(`This user doesn't exist in the database. Tell him or her to use the -join command!`);
@@ -73,11 +73,11 @@ module.exports = {
                 }, 
                 {
                     $inc: {
-                        crystalkey: 1,
+                        easteregg: 1,
                     },
                 }
             );
-            message.channel.send(`**${message.author.username}** gave **${target.username}** a shiny crystal key!`);
+            message.channel.send(`**${message.author.username}** gave **${target.username}** a golden easter egg!`);
         }
     }
 }
