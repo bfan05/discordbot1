@@ -30,7 +30,7 @@ module.exports = {
                     return message.channel.send("I'm sorry, that answer is incorrect.");
                 }
             });
-            
+
             const response = await profileModel.findOneAndUpdate(
                 {
                     userID: message.author.id,
@@ -41,17 +41,6 @@ module.exports = {
                     },
                 }
             );
-
-            let filter = m => m.author.id === message.author.id;
-            const collector = message.channel.createMessageCollector(filter, { time: 15000 });
-
-            collector.on('collect', m => {
-	            console.log(`Collected ${m.content}`);
-            });
-
-            collector.on('end', collected => {
-                console.log(`Collected ${collected.size} items`);
-            });
 
             /*message.channel.send(`You have discovered the copper key! If you want it, first answer this question: What is the Key to Beating Acererak?`).then(() => {
             message.channel.awaitMessages(filter, {
