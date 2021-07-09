@@ -8,7 +8,7 @@ module.exports = {
     async execute(client, message, args, Discord, profileData) {
         const data = await profileModel.findOne({ userID: message.author.id });
 
-        if (!args[0] && data.copperkey > 0) {
+        if (!args[0] && data.jadekey > 0) {
             const newEmbed = new Discord.MessageEmbed()
             .setColor('#9CCFE7')
             .setAuthor(`${message.author.username}'s Jade Keys`, `${message.author.avatarURL({dynamic: true})}`)
@@ -21,7 +21,7 @@ module.exports = {
             return message.channel.send(newEmbed);
         }
 
-        else if (!args[0] && data.copperkey == 0) {
+        else if (!args[0] && data.jadekey == 0) {
             let correct = false;
 
             message.author.send("You have discovered the jade key! If you want it, first answer this question: How many did you collect to blow the whistle?");
