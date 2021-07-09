@@ -23,15 +23,17 @@ module.exports = {
             let correct = false;
 
             message.author.send("You have discovered the copper key! If you want it, first answer this question: What is the Key to Beating Acererak?");
-            const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max: 1, time: 10000 });
-            collector.on('collect', message => {
-                if (message.content.toLowerCase() == "play on the left") {
-                    correct = true;
-                    message.channel.send(`Congratulations! You have received a shiny copper key!`)
-                } else {
-                    return message.channel.send("I'm sorry, that answer is incorrect.");
-                }
-            });
+            message.author.createDM().then(dmchannel => {
+                const collector = new Discord.MessageCollector(dmchannel, m => m.author.id === message.author.id, { max: 1, time: 10000 });
+                collector.on('collect', message => {
+                    if (message.content.toLowerCase() == "play on the left") {
+                        correct = true;
+                        dmchannel.send(`Congratulations! You have received a shiny copper key!`)
+                    } else {
+                        dmchannel.send("I'm sorry, that answer is incorrect.");
+                    }
+                })
+            })
 
             if (!correct) return;
 
