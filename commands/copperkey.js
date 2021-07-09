@@ -25,10 +25,9 @@ module.exports = {
         else if (!args[0] && data.copperkey == 0) {
             message.channel.send(data.copperkey);
 
-            let correct = false;
-
             message.author.send("You have discovered the copper key! If you want it, first answer this question: What is the Key to Beating Acererak?");
             message.author.createDM().then(dmchannel => {
+                let correct = false;
                 const collector = new Discord.MessageCollector(dmchannel, m => m.author.id === message.author.id, { max: 1, time: 10000 });
                 collector.on('collect', message => {
                     if (message.content.toLowerCase() == "play on the left") {
@@ -41,25 +40,24 @@ module.exports = {
                 collector.on('end', collected => {
                     if (collected.size == 0) dmchannel.send("Time's up!")
                 })
-            })
 
-            if (!correct) {
-                message.channel.send('hello');
-                return;
-            }
-
-            const response = await profileModel.findOneAndUpdate(
-                {
-                    userID: message.author.id,
-                }, 
-                {
-                    $inc: {
-                        copperkey: 1,
-                    },
+                if (!correct) {
+                    message.channel.send('hello');
+                    return;
                 }
-            );
-
-            message.channel.send('updated');
+    
+                const response = await profileModel.findOneAndUpdate(
+                    {
+                        userID: message.author.id,
+                    }, 
+                    {
+                        $inc: {
+                            copperkey: 1,
+                        },
+                    }
+                );
+                message.channel.send('updated');
+            })
         }
         else {
             if (message.author.id != '777641801212493826') {
