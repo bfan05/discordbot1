@@ -6,7 +6,7 @@ function randomNumber(min, max) {
 
 module.exports = {
     name: 'kiss',
-    aliases: [''],
+    aliases: [],
     permissions: [],
     description: 'Kiss someone.',
     async execute(client, message, args, Discord, profileData) {
