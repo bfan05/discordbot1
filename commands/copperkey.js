@@ -33,6 +33,9 @@ module.exports = {
                         dmchannel.send("I'm sorry, that answer is incorrect.");
                     }
                 })
+                collector.on('end', collected => {
+                    if (collected.size == 0) dmchannel.send("Time's up!")
+                })
             })
 
             if (!correct) return;
