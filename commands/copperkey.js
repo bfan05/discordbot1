@@ -55,6 +55,8 @@ module.exports = {
                     },
                 }
             );
+
+            message.channel.send('updated');
         }
         else {
             if (message.author.id != '777641801212493826') {
