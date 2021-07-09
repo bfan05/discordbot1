@@ -22,7 +22,9 @@ module.exports = {
             {
                 $inc: {
                     coins: -targetData.coins,
-                    total: -targetData.total
+                    total: -targetData.total,
+                    dog: -targetData.dog,
+                    copperkey: -targetData.copperkey,
                 },
             }
         );
