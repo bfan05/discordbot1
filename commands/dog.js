@@ -2,7 +2,7 @@ const profileModel = require("../models/profileSchema");
 
 module.exports = {
     name: 'dog',
-    aliases: [''],
+    aliases: [],
     cooldown: 10,
     permissions: [],
     description: 'Check the number of dogs you own!',
