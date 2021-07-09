@@ -3,6 +3,7 @@ const profileModel = require("../models/profileSchema");
 module.exports = {
     name: 'easteregg',
     aliases: ['egg'],
+    cooldown: 10,
     permissions: [],
     description: 'Check the number of easter eggs you own!',
     async execute(client, message, args, Discord, profileData) {

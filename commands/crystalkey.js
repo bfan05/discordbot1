@@ -3,6 +3,7 @@ const profileModel = require("../models/profileSchema");
 module.exports = {
     name: 'crystalkey',
     aliases: ['cryskey'],
+    cooldown: 10,
     permissions: [],
     description: 'Check the number of crystal keys you own!',
     async execute(client, message, args, Discord, profileData) {
