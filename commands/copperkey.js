@@ -7,7 +7,9 @@ module.exports = {
     permissions: [],
     description: 'Check the number of copper keys you own!',
     async execute(client, message, args, Discord, profileData) {
-        if (!args[0] && profileData.copperkey > 0) {
+        const data = await profileModel.findOne({ userID: message.author.id });
+
+        if (!args[0] && data.copperkey > 0) {
             const newEmbed = new Discord.MessageEmbed()
             .setColor('#9CCFE7')
             .setAuthor(`${message.author.username}'s Copper Keys`, `${message.author.avatarURL({dynamic: true})}`)
@@ -19,7 +21,7 @@ module.exports = {
 
             return message.channel.send(newEmbed);
         }
-        else if (!args[0] && profileData.copperkey == 0) {
+        else if (!args[0] && data.copperkey == 0) {
             let correct = false;
 
             message.author.send("You have discovered the copper key! If you want it, first answer this question: What is the Key to Beating Acererak?");
