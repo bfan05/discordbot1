@@ -26,8 +26,8 @@ module.exports = {
                     dog: -targetData.dog,
                     copperkey: -targetData.copperkey,
                     jadekey: -targetData.jadekey,
-                    crystalkey: -target.crystalkey,
-                    easteregg: -target.easteregg,
+                    crystalkey: -targetData.crystalkey,
+                    easteregg: -targetData.easteregg,
                 },
             }
         );
