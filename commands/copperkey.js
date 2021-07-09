@@ -23,7 +23,6 @@ module.exports = {
         }
 
         else if (!args[0] && data.copperkey == 0) {
-            message.channel.send(data.copperkey);
             let correct = false;
 
             message.author.send("You have discovered the copper key! If you want it, first answer this question: What is the Key to Beating Acererak?");
@@ -44,7 +43,6 @@ module.exports = {
 
             setTimeout(async function(){
                 if (!correct) {
-                    message.channel.send('hello');
                     return;
                 }
     
