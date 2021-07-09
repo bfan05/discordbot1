@@ -3,7 +3,6 @@ const profileModel = require("../models/profileSchema");
 module.exports = {
     name: 'copperkey',
     aliases: ['ckey'],
-    cooldown: 10,
     permissions: [],
     description: 'Check the number of copper keys you own!',
     async execute(client, message, args, Discord, profileData) {
@@ -56,7 +55,6 @@ module.exports = {
                         },
                     }
                 );
-                message.channel.send('updated');
             }, 10000)
         }
         else {
