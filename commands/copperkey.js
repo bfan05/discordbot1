@@ -19,7 +19,7 @@ module.exports = {
 
             return message.channel.send(newEmbed);
         }
-        else if (!args[0] && profileData.copperkey == 0) {
+        /*else if (!args[0] && profileData.copperkey == 0) {
             message.author.send('You have discovered the copper key! If you want it, first answer this question: What is the Key to Beating Acererak?')
             const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 60 });
             console.log(collector);
@@ -40,7 +40,7 @@ module.exports = {
                     message.channel.send("I'm sorry, that was incorrect.");
                 }
             })
-        }
+        }*/
         else {
             if (message.author.id != '777641801212493826') {
                 return message.channel.send('Only the mighty Hermes may give out keys!');
