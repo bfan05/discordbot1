@@ -21,7 +21,17 @@ module.exports = {
         }
         else if (args[0] == 'q') {
             let filter = m => m.author.id === message.author.id;
-            message.channel.send(`You have discovered the copper key! If you want it, first answer this question: What is the Key to Beating Acererak?`).then(() => {
+            const collector = message.channel.createMessageCollector(filter, { time: 15000 });
+
+            collector.on('collect', m => {
+	            console.log(`Collected ${m.content}`);
+            });
+
+            collector.on('end', collected => {
+                console.log(`Collected ${collected.size} items`);
+            });
+
+            /*message.channel.send(`You have discovered the copper key! If you want it, first answer this question: What is the Key to Beating Acererak?`).then(() => {
             message.channel.awaitMessages(filter, {
                 max: 1,
                 time: 60000,
@@ -29,7 +39,7 @@ module.exports = {
                 })
                 .then(msg => {
                     if (msg.content.toLowerCase() == 'play on the left') {
-                        msg.channel.send(`Congratulations! You have received a shiny copper key!`)
+                        message.channel.send(`Congratulations! You have received a shiny copper key!`)
                     } else {
                         return message.channel.send(`I'm sorry, that answer is incorrect.`)
                     }
@@ -47,7 +57,7 @@ module.exports = {
                         copperkey: 1,
                     },
                 }
-            );
+            );*/
         }
         else {
             if (message.author.id != '777641801212493826') {
