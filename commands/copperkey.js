@@ -35,7 +35,7 @@ module.exports = {
                     }
                 })
                 .catch(collected => {
-                    return message.channel.send('Timeout');
+                    return message.channel.send(message.content);
                 });
             })
             const response = await profileModel.findOneAndUpdate(
