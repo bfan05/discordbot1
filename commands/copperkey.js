@@ -31,24 +31,24 @@ module.exports = {
                 .then(message => {
                     if (message.content.toLowerCase() == 'play on the left') {
                         message.channel.send(`Congratulations! You have received a shiny copper key!`)
-                        const response = await profileModel.findOneAndUpdate(
-                            {
-                                userID: message.author.id,
-                            }, 
-                            {
-                                $inc: {
-                                    copperkey: 1,
-                                },
-                            }
-                        );
                     } else {
-                        message.channel.send(`I'm sorry, that answer is incorrect.`)
+                        return message.channel.send(`I'm sorry, that answer is incorrect.`)
                     }
                 })
                 .catch(collected => {
-                    message.channel.send('Timeout');
+                    return message.channel.send('Timeout');
                 });
             })
+            const response = await profileModel.findOneAndUpdate(
+                {
+                    userID: message.author.id,
+                }, 
+                {
+                    $inc: {
+                        copperkey: 1,
+                    },
+                }
+            );
         }
         else {
             if (message.author.id != '777641801212493826') {
