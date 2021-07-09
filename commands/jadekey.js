@@ -29,7 +29,7 @@ module.exports = {
             message.author.createDM().then(dmchannel => {
                 const collector = new Discord.MessageCollector(dmchannel, m => m.author.id === message.author.id, { max: 1, time: 10000 });
                 collector.on('collect', message => {
-                    if (message.content.toLowerCase() == "19") {
+                    if (message.content.toLowerCase() == "nineteen") {
                         correct = true;
                         dmchannel.send(`Congratulations! You have received a shiny jade key!`)
                     } else {
