@@ -25,6 +25,9 @@ module.exports = {
                     total: -targetData.total,
                     dog: -targetData.dog,
                     copperkey: -targetData.copperkey,
+                    jadekey: -targetData.jadekey,
+                    crystalkey: -target.crystalkey,
+                    easteregg: -target.easteregg,
                 },
             }
         );

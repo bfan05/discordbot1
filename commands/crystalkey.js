@@ -25,11 +25,11 @@ module.exports = {
         else if (!args[0] && data.crystalkey == 0) {
             let correct = false;
 
-            message.author.send("You have discovered the crystal key! If you want it, first answer this question: 2112");
+            message.author.send("You have discovered the crystal key! If you want it, first answer this question: Who was actually with Parzival, the knight, when he found the Holy Grail?");
             message.author.createDM().then(dmchannel => {
                 const collector = new Discord.MessageCollector(dmchannel, m => m.author.id === message.author.id, { max: 1, time: 10000 });
                 collector.on('collect', message => {
-                    if (message.content.toLowerCase() == "rush") {
+                    if (message.content.toLowerCase() == "nobody") {
                         correct = true;
                         dmchannel.send(`Congratulations! You have received a shiny crystal key!`)
                     } else {
