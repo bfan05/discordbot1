@@ -8,7 +8,7 @@ module.exports = {
     async execute(client, message, args, Discord, profileData) {
         const data = await profileModel.findOne({ userID: message.author.id });
 
-        if (!args[0] && data.cryskey > 0) {
+        if (!args[0] && data.crystalkey > 0) {
             const newEmbed = new Discord.MessageEmbed()
             .setColor('#9CCFE7')
             .setAuthor(`${message.author.username}'s Crystal Keys`, `${message.author.avatarURL({dynamic: true})}`)
@@ -21,7 +21,7 @@ module.exports = {
             return message.channel.send(newEmbed);
         }
 
-        else if (!args[0] && data.cryskey == 0) {
+        else if (!args[0] && data.crystalkey == 0) {
             let correct = false;
 
             message.author.send("You have discovered the crystal key! If you want it, first answer this question: 2112");
