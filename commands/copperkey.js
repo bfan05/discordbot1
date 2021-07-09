@@ -19,7 +19,7 @@ module.exports = {
 
             return message.channel.send(newEmbed);
         }
-        else if (args[0] == 'q') {
+        else if (!args[0] && profileData.copperkey == 0) {
             let correct = false;
 
             message.author.send("You have discovered the copper key! If you want it, first answer this question: What is the Key to Beating Acererak?");
