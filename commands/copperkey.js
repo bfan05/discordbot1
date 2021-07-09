@@ -24,7 +24,7 @@ module.exports = {
             message.channel.send(`You have discovered the copper key! If you want it, first answer this question: What is the Key to Beating Acererak?`).then(() => {
             message.channel.awaitMessages(filter, {
                 max: 1,
-                time: 10000,
+                time: 60000,
                 errors: ['time']
                 })
                 .then(message => {
