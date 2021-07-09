@@ -19,6 +19,9 @@ module.exports = async (Discord, client, message) => {
                 total: 0,
                 dogs: 0,
                 copperkey: 0,
+                crystalkey: 0,
+                jadekey: 0,
+                easteregg: 0,
             });
             profile.save();
         }

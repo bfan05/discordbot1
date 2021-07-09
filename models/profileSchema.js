@@ -8,6 +8,9 @@ const profileSchema = new mongoose.Schema({
     total: {type: Number, default: 0},
     dogs: {type: Number, default: 0},
     copperkey: {type: Number, default: 0},
+    crystalkey: {type: Number, default: 0},
+    jadekey: {type: Number, default: 0},
+    easteregg: {type: Number, default: 0},
 })
 
 const model = mongoose.model('ProfileModels', profileSchema);
