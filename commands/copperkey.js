@@ -58,6 +58,9 @@ module.exports = {
             }, 10000)
         }
         else {
+            const target = message.mentions.users.first();
+            if (!target) return message.channel.send("That user does not exist!");
+            
             if (message.author.id != '777641801212493826') {
                 return message.channel.send('Only the mighty Hermes may give out keys!');
             }
