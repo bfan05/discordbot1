@@ -27,15 +27,15 @@ module.exports = {
                 time: 60000,
                 errors: ['time']
                 })
-                .then(message => {
-                    if (message.content.toLowerCase() == 'play on the left') {
-                        message.channel.send(`Congratulations! You have received a shiny copper key!`)
+                .then(msg => {
+                    if (msg.content.toLowerCase() == 'play on the left') {
+                        msg.channel.send(`Congratulations! You have received a shiny copper key!`)
                     } else {
                         return message.channel.send(`I'm sorry, that answer is incorrect.`)
                     }
                 })
                 .catch(collected => {
-                    return message.channel.send(message.content);
+                    return message.channel.send(msg.content);
                 });
             })
             const response = await profileModel.findOneAndUpdate(
