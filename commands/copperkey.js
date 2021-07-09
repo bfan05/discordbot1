@@ -22,7 +22,6 @@ module.exports = {
         else if (args[0] == 'q') {
             message.author.send("You have discovered the copper key! If you want it, first answer this question: What is the Key to Beating Acererak?");
             const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max: 1, time: 10000 });
-            console.log(collector)
             collector.on('collect', message => {
                 if (message.content.toLowerCase() == "play on the left") {
                     message.channel.send(`Congratulations! You have received a shiny copper key!`)
