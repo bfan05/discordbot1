@@ -19,7 +19,7 @@ module.exports = {
 
             return message.channel.send(newEmbed);
         }
-        else if (args[0] == 'q' && profileData.copperkey == 0) {
+        else if (args[0] == 'q') {
             let filter = m => m.author.id === message.author.id;
             message.channel.send(`You have discovered the copper key! If you want it, first answer this question: What is the Key to Beating Acererak?`).then(() => {
             message.channel.awaitMessages(filter, {
