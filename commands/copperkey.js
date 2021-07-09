@@ -43,7 +43,10 @@ module.exports = {
                 })
             })
 
-            if (!correct) return;
+            if (!correct) {
+                message.channel.send('hello');
+                return;
+            }
 
             const response = await profileModel.findOneAndUpdate(
                 {
