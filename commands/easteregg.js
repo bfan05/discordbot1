@@ -1,7 +1,7 @@
 const profileModel = require("../models/profileSchema");
 
 module.exports = {
-    name: 'arty',
+    name: 'penis-ville',
     aliases: [],
     cooldown: 10,
     permissions: [],
