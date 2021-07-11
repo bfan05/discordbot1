@@ -33,7 +33,7 @@ module.exports = {
                         correct = true;
                         dmchannel.send(`Congratulations! You have received a golden easter egg!`)
                     } else {
-                        dmchannel.send("Oopsie! Did you just do a poopsie? Incorrect!");
+                        dmchannel.send("HAHAHAHAHA. nub. Incorrect!");
                     }
                 })
                 collector.on('end', collected => {
