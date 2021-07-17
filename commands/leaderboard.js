@@ -21,35 +21,39 @@ module.exports = {
             let pg = parseInt(args[0]);
             if (pg != Math.floor(pg)) pg = 1;
             if (!pg) pg = 1;
-            let end = Math.min(pg * 10, res.length);
+            let adjust = 0;
             let start = (pg * 10) - 10;
+            let end = Math.min(pg * 10, res.length);
+            let ostart = start;
+            let oend = end;
 
-            let curr = start;
+            let idx = [];
 
-            if (pg != 1) {
-                end = Math.min(res.length, end + 2);
-                start = Math.min(start + 2, res.length);
+            for (i = 0; i < end; i++) {
+                if (res[i].userID == '233793523269238785' || res[i].userID == '777641801212493826') {
+                    idx.push(i);
+                }
             }
+            for (i = 0; i < idx.length; i++) {
+                if (idx[i] < start) {
+                    start = Math.min(start + 1, res.length);
+                    end = Math.min(end + 1, res.length);
+                }
+                if (idx[i] >= start && idx[i] < end) {
+                    end = Math.min(end + 1, res.length);
+                }
+            }
+
+            let curr = ostart;
 
             if (res.length === 0) {
                 embed.addField("Error", "No pages found!");
             } else if (res.length <= start) {
                 embed.addField("Error", "No pages found!");
-            } else if (res.length <= end) {
-                embed.setFooter(`page ${pg} of ${page}`)
-                for (i = start; i < end; i++) {
-                    if (res[i].userID == '233793523269238785' || res[i].userID == '777641801212493826') {
-                        if (end != res.length) ++end;
-                        continue;
-                    };
-                    embed.addField(`${curr + 1}. ${res[i].usernm}`, `${res[i].coins.toLocaleString()} 𝕋`);
-                    curr++;
-                }
             } else {
                 embed.setFooter(`page ${pg} of ${page}`)
                 for (i = start; i < end; i++) {
                     if (res[i].userID == '233793523269238785' || res[i].userID == '777641801212493826') {
-                        if (end != res.length) ++end;
                         continue;
                     };
                     embed.addField(`${curr + 1}. ${res[i].usernm}`, `${res[i].coins.toLocaleString()} 𝕋`);
