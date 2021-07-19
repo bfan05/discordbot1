@@ -9,10 +9,10 @@ module.exports = {
         const filter = {};
         const update = {
             $unset: {
-                copperkey: 0,
-                crystalkey: 0,
-                jadekey: 0,
-                easteregg: 0,
+                'tags.copperkey': 0,
+                'tags.crystalkey': 0,
+                'tags.jadekey': 0,
+                'tags.easteregg': 0,
             },
         };
         const result = await profileModel.updateMany(filter, update);
