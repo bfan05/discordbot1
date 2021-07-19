@@ -24,10 +24,10 @@ module.exports = {
                     coins: -targetData.coins,
                     total: -targetData.total,
                     dog: -targetData.dog,
-                    copperkey: -targetData.copperkey,
-                    jadekey: -targetData.jadekey,
-                    crystalkey: -targetData.crystalkey,
-                    easteregg: -targetData.easteregg,
+                    cloak: -targetData.cloak,
+                    stone: -targetData.stone,
+                    wand: -targetData.wand,
+                    master: -targetData.master,
                 },
             }
         );
