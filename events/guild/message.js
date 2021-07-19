@@ -32,9 +32,9 @@ module.exports = async (Discord, client, message) => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const cmd = args.shift().toLowerCase();
 
-    if (message.author.id != '692851547062665317' && message.author.id != '777641801212493826') {
+    /*if (message.author.id != '692851547062665317' && message.author.id != '777641801212493826') {
         return message.channel.send('New features are being added to the bot! Please be patient, it will be back up soon.')
-    }
+    }*/
 
     const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 
