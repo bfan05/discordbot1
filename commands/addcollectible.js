@@ -8,9 +8,14 @@ module.exports = {
     async execute(client, message, args, Discord, profileData) {
         const filter = {};
         const update = {
-            $unset: [ "copperkey", "crystalkey", "jadekey", "easteregg" ]
+            $set: {
+                cloak: 0,
+                stone: 0,
+                wand: 0,
+                master: 0,
+            }
         };
         const result = await profileModel.updateMany(filter, update);
-        message.channel.send('Collectible removed!');
+        message.channel.send('Collectible added!');
     }
 }
