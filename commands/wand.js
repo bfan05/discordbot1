@@ -65,7 +65,7 @@ module.exports = {
                 );
             }, 15000)
         }
-        else if (!args[0] && data.wand == 0 && data.stone == 0 && data.cloak == 0) {
+        else if (!args[0] && data.wand == 0 && (data.stone == 0 || data.cloak == 0)) {
             message.author.send("You cannot get a wand before getting the stone and cloak! Come back when you are ready, fool!");
         }
         else {
