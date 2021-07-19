@@ -13,7 +13,7 @@ module.exports = {
             const newEmbed = new Discord.MessageEmbed()
             .setColor('#9CCFE7')
             .setAuthor(`${message.author.username} is a Master of Death`, `${message.author.avatarURL({dynamic: true})}`)
-            .setImage('https://media.tenor.co/videos/94831a6fd7bcb8b03cc2c52b3ad09ce4/mp4')
+            .setImage('https://media1.tenor.com/images/1ac95bc239abff2a9b2263b856b0032f/tenor.gif?itemid=5052919')
             .setFooter('Created by bfan#0125')
 
             return message.channel.send(newEmbed);

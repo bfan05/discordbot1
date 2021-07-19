@@ -13,7 +13,7 @@ module.exports = {
             const newEmbed = new Discord.MessageEmbed()
             .setColor('#9CCFE7')
             .setAuthor(`${message.author.username}'s Wand`, `${message.author.avatarURL({dynamic: true})}`)
-            .setImage('https://media.tenor.co/videos/31ea92c556d373fb76f445d8aafa371a/mp4')
+            .setImage('https://media.tenor.com/images/10606cac94f8e9ded2f40601e5236701/tenor.gif')
             .addFields(
                 {name: `${message.author.username} has a special wand! Great job.`, value: `\u200B`},
             )
@@ -28,8 +28,8 @@ module.exports = {
             message.author.createDM().then(dmchannel => {
                 const newEmbed = new Discord.MessageEmbed()
                 .setColor('#9CCFE7')
-                .setAuthor(`Stone`, `${message.author.avatarURL({dynamic: true})}`)
-                .setImage('https://media.tenor.co/videos/31ea92c556d373fb76f445d8aafa371a/mp4')
+                .setAuthor(`Wand`, `${message.author.avatarURL({dynamic: true})}`)
+                .setImage('https://media.tenor.com/images/10606cac94f8e9ded2f40601e5236701/tenor.gif')
                 .addFields(
                     {name: `So I see you want a wand...`, value: `***Passing from 14 owners, this particular item from the Deathly Hallows has seen a lot of blood. How long does the original owner have to be dead before you can use it? Who owned it after killing Loxias?***`},
                 )
