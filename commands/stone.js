@@ -12,11 +12,8 @@ module.exports = {
         if (!args[0] && data.stone > 0) {
             const newEmbed = new Discord.MessageEmbed()
             .setColor('#9CCFE7')
-            .setAuthor(`${message.author.username}'s Stone`, `${message.author.avatarURL({dynamic: true})}`)
+            .setAuthor(`${message.author.username} has a rare stone! Great job.`, `${message.author.avatarURL({dynamic: true})}`)
             .setImage('https://cdn.discordapp.com/attachments/855927632419094582/866512568604688424/stone.gif')
-            .addFields(
-                {name: `${message.author.username} has a rare stone! Great job.`, value: `\u200B`},
-            )
             .setFooter('Created by bfan#0125')
 
             return message.channel.send(newEmbed);

@@ -12,11 +12,8 @@ module.exports = {
         if (!args[0] && data.wand > 0) {
             const newEmbed = new Discord.MessageEmbed()
             .setColor('#9CCFE7')
-            .setAuthor(`${message.author.username}'s Wand`, `${message.author.avatarURL({dynamic: true})}`)
+            .setAuthor(`${message.author.username} has a special wand! Great job.`, `${message.author.avatarURL({dynamic: true})}`)
             .setImage('https://media.discordapp.net/attachments/827223677049110552/866762172306817054/tenor.gif')
-            .addFields(
-                {name: `${message.author.username} has a special wand! Great job.`, value: `\u200B`},
-            )
             .setFooter('Created by bfan#0125')
 
             return message.channel.send(newEmbed);

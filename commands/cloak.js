@@ -12,11 +12,8 @@ module.exports = {
         if (!args[0] && data.cloak > 0) {
             const newEmbed = new Discord.MessageEmbed()
             .setColor('#9CCFE7')
-            .setAuthor(`${message.author.username}'s Cloak`, `${message.author.avatarURL({dynamic: true})}`)
+            .setAuthor(`${message.author.username} has an invisibility cloak! Great job.`, `${message.author.avatarURL({dynamic: true})}`)
             .setImage('https://cdn.discordapp.com/attachments/855927632419094582/866507277191741450/HPGif-3.gif')
-            .addFields(
-                {name: `${message.author.username} has an invisibility cloak! Great job.`, value: `\u200B`},
-            )
             .setFooter('Created by bfan#0125')
 
             return message.channel.send(newEmbed);
