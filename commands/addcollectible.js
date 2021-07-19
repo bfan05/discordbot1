@@ -8,12 +8,7 @@ module.exports = {
     async execute(client, message, args, Discord, profileData) {
         const filter = {};
         const update = {
-            $unset: {
-                copperkey: "",
-                crystalkey: "",
-                jadekey: "",
-                easteregg: "",
-            },
+            $unset: [ "copperkey", "crystalkey", "jadekey", "easteregg" ]
         };
         const result = await profileModel.updateMany(filter, update);
         message.channel.send('Collectible removed!');
