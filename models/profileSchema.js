@@ -7,6 +7,10 @@ const profileSchema = new mongoose.Schema({
     coins: {type: Number, default: 0},
     total: {type: Number, default: 0},
     dogs: {type: Number, default: 0},
+    cloak: {type: Number, default: 0},
+    stone: {type: Number, default: 0},
+    wand: {type: Number, default: 0},
+    master: {type: Number, default: 0},
 })
 
 const model = mongoose.model('ProfileModels', profileSchema);

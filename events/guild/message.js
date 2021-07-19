@@ -18,6 +18,10 @@ module.exports = async (Discord, client, message) => {
                 coins: 0,
                 total: 0,
                 dogs: 0,
+                cloak: 0,
+                stone: 0,
+                wand: 0,
+                master: 0,
             });
             profile.save();
         }
