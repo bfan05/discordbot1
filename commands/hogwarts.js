@@ -10,10 +10,14 @@ module.exports = {
         message.author.createDM().then(dmchannel => {
             const newEmbed = new Discord.MessageEmbed()
             .setColor('#9CCFE7')
-            .setAuthor(`Deathly Hallows hunt`, `${message.author.avatarURL({dynamic: true})}`)
+            .setAuthor(`Welcome`, `${message.author.avatarURL({dynamic: true})}`)
             .setImage('https://media1.tenor.com/images/5edf2155bf401d9321cf67a184a916bc/tenor.gif?itemid=16676324')
             .addFields(
-                {name: `Welcome ${message.author.username}...`, value: `to the Deathly Hallows hunt!`},
+                {name: `Welcome ${message.author.username}...`, value: `***to the Hunt for the Three Deathly Hallows. Together... these artifacts grant it's user the power to Master Death.
+                
+                Win and be rewarded greatly!
+                
+                To get your first clue type: -stone***`},
             )
             .setFooter('Created by bfan#0125')
             dmchannel.send(newEmbed);
