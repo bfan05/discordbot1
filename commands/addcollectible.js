@@ -7,14 +7,15 @@ module.exports = {
     description: "Add a collectible",
     async execute(client, message, args, Discord, profileData) {
         const filter = {};
-        /*const update = {
-            $set: {
+        const update = {
+            $unset: {
+                copperkey: 0,
                 crystalkey: 0,
                 jadekey: 0,
                 easteregg: 0,
             },
-        };*/
-        const result = await profileModel.updateMany({}, {$unset: {crystalkey: 1, copperkey: 1, jadekey: 1, easteregg: 1}}, false, true);
+        };
+        const result = await profileModel.updateMany(filter, update);
         message.channel.send('Collectible removed!');
     }
 }
