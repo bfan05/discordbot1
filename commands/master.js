@@ -19,7 +19,7 @@ module.exports = {
             return message.channel.send(newEmbed);
         }
         else {
-            message.channel.send(`${message.author.username} is not a master of death yet! What a fool.`)
+            message.channel.send(`**${message.author.username}** is not a master of death yet! What a fool.`)
         }
     }
 }

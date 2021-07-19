@@ -41,7 +41,7 @@ module.exports = {
                 collector.on('collect', message => {
                     if (message.content.toLowerCase() == "thestrals. you must have witnessed a death") {
                         correct = true;
-                        dmchannel.send(`Congratulations! You are another step closer to mastering Death. You have the Cloak of Invisibility. Type -stone for the next item`)
+                        dmchannel.send(`Congratulations! You are another step closer to mastering Death. You have the Resurrection Stone. Type -wand for the next item`)
                     } else {
                         dmchannel.send("Imagine being so dumb you can't answer this question correctly... Incorrect!");
                     }
