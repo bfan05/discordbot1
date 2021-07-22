@@ -14,7 +14,7 @@ module.exports = {
 
         let values = [
             ['gives', ' a bear hug! How cute!'],
-            ['hugs', '. Both agree Stonk is awful.'],
+            ['hugs', '. Both agree Maria is awful.'],
             ['hugs', ' and crushes their bones!'],
         ];
 
