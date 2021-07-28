@@ -11,6 +11,9 @@ module.exports = async (Discord, client, message) => {
         let memberTarget = message.guild.members.cache.get('692851547062665317');
         memberTarget.roles.add(muteRole);
         message.channel.send(`**bfan** has been muted`);
+        memberTarget.createDM().then(dmchannel => {
+            dmchannel.send('solve captcha bud!');
+        })
     }
 
     if (!message.content.startsWith(prefix) || message.author.bot) return;
