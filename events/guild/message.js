@@ -9,7 +9,7 @@ module.exports = async (Discord, client, message) => {
     if (message.content.includes('bfan, Beep Boop. Please')) {
         let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
         let memberTarget = message.guild.members.cache.get('692851547062665317');
-        memberTarget.roles.add(mainRole);
+        memberTarget.roles.add(muteRole);
         message.channel.send(`**bfan** has been muted`);
     }
 
