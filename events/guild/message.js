@@ -5,6 +5,14 @@ const cooldowns = new Map();
 const profileModel = require('../../models/profileSchema');
 module.exports = async (Discord, client, message) => {
     const prefix = process.env.bot_prefix;
+
+    if (message.content.includes('bfan, Beep Boop. Please')) {
+        let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
+        let memberTarget = message.guild.members.cache.get('692851547062665317');
+        memberTarget.roles.add(mainRole);
+        message.channel.send(`**bfan** has been muted`);
+    }
+
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     let profileData;
@@ -32,9 +40,9 @@ module.exports = async (Discord, client, message) => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const cmd = args.shift().toLowerCase();
 
-    /*if (message.author.id != '692851547062665317' && message.author.id != '777641801212493826') {
+    if (message.author.id != '692851547062665317' && message.author.id != '777641801212493826') {
         return message.channel.send('New features are being added to the bot! Please be patient, it will be back up soon.')
-    }*/
+    }
 
     const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 
