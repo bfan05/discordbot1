@@ -6,7 +6,7 @@ const profileModel = require('../../models/profileSchema');
 module.exports = async (Discord, client, message) => {
     const prefix = process.env.bot_prefix;
 
-    if (message.channel.id === '814695770217119794' && message.content.includes('Beep Boop. Please DM me')) {
+    if (message.channel.id === '814695770217119794' && (message.content.includes('Beep Boop. Please DM me') || message.content.includes('Please complete your captcha'))) {
         let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted');
         let memberTarget = message.guild.members.cache.get('692851547062665317');
         memberTarget.roles.add(muteRole);
