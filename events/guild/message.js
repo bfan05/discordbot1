@@ -51,6 +51,10 @@ module.exports = async (Discord, client, message) => {
         return message.channel.send('You have been banned.');
     }
 
+    if (message.guild.id != '746211731499384863' && message.guild.id != '855927632419094579' && message.guild.id != '827223677049110548' && message.guild.id != '831626733450166273') {
+        return message.channel.send('Invalid server.')
+    }
+
     client.guilds.cache.forEach(guild => {
         console.log(`${guild.name} | ${guild.id}`);
     })
