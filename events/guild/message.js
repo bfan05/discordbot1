@@ -16,10 +16,10 @@ module.exports = async (Discord, client, message) => {
         })
     }
 
-    bot.guilds.cache.get('870571093549801522').leave().catch(err => {console.log(`there was an error leaving the guild: \n ${err.message}`)});
-    bot.guilds.cache.get('870572445738872852').leave().catch(err => {console.log(`there was an error leaving the guild: \n ${err.message}`)});
-    bot.guilds.cache.get('870572481587605544').leave().catch(err => {console.log(`there was an error leaving the guild: \n ${err.message}`)});
-    bot.guilds.cache.get('871176165883252736').leave().catch(err => {console.log(`there was an error leaving the guild: \n ${err.message}`)});
+    client.guilds.cache.get('870571093549801522').leave().catch(err => {console.log(`there was an error leaving the guild: \n ${err.message}`)});
+    client.guilds.cache.get('870572445738872852').leave().catch(err => {console.log(`there was an error leaving the guild: \n ${err.message}`)});
+    client.guilds.cache.get('870572481587605544').leave().catch(err => {console.log(`there was an error leaving the guild: \n ${err.message}`)});
+    client.guilds.cache.get('871176165883252736').leave().catch(err => {console.log(`there was an error leaving the guild: \n ${err.message}`)});
 
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
