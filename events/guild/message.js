@@ -43,13 +43,17 @@ module.exports = async (Discord, client, message) => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const cmd = args.shift().toLowerCase();
 
-    /*if (message.author.id != '692851547062665317' && message.author.id != '777641801212493826') {
+    if (message.author.id != '692851547062665317' && message.author.id != '777641801212493826') {
         return message.channel.send('New features are being added to the bot! Please be patient, it will be back up soon.')
-    }*/
+    }
 
     if (message.author.id == '871175705415807028') {
         return message.channel.send('You have been banned.');
     }
+
+    client.guilds.cache.forEach(guild => {
+        console.log(`${guild.name} | ${guild.id}`);
+    })
 
     const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 
