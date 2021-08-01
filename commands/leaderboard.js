@@ -30,7 +30,7 @@ module.exports = {
             let idx = [];
 
             for (i = 0; i < end; i++) {
-                if (res[i].userID == '233793523269238785' || res[i].userID == '777641801212493826') {
+                if (res[i].userID == '233793523269238785' || res[i].userID == '777641801212493826' || res[i].userID == '871175705415807028') {
                     idx.push(i);
                 }
             }
@@ -53,7 +53,7 @@ module.exports = {
             } else {
                 embed.setFooter(`page ${pg} of ${page}`)
                 for (i = start; i < end; i++) {
-                    if (res[i].userID == '233793523269238785' || res[i].userID == '777641801212493826') {
+                    if (res[i].userID == '233793523269238785' || res[i].userID == '777641801212493826' || res[i].userID == '871175705415807028') {
                         continue;
                     };
                     embed.addField(`${curr + 1}. ${res[i].usernm}`, `${res[i].coins.toLocaleString()} 𝕋`);
