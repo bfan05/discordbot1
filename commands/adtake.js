@@ -44,7 +44,7 @@ module.exports = {
             }
         );
         message.channel.send(`**${message.author.username}** took **${amount.toLocaleString()}** TMC Cash from **${target.username}**. Boohoo!`);
-        client.channels.cache.get('857330940631187526').send(`**${message.author.username} (${message.author.id})** adtook **${amount.toLocaleString()}** from **${target.username} (${target.id})**.`);
+        //client.channels.cache.get('857330940631187526').send(`**${message.author.username} (${message.author.id})** adtook **${amount.toLocaleString()}** from **${target.username} (${target.id})**.`);
         client.channels.cache.get('857698338051588127').send(`**${message.author.username} (${message.author.id})** adtook **${amount.toLocaleString()}** from **${target.username} (${target.id})**.`);
     }
 }
