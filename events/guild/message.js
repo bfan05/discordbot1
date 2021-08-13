@@ -16,6 +16,11 @@ module.exports = async (Discord, client, message) => {
         })
     }
 
+    if (message.author.id === '455171049173286923' && message === 'k') {
+        message.delete(1000);
+        message.channel.send('k redlotus');
+    }
+
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     let profileData;
