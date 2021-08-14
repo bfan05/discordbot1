@@ -16,6 +16,10 @@ module.exports = async (Discord, client, message) => {
         })
     }
 
+    if (message.author.id === '692851547062665317' && message.content === 'k') {
+        message.react('<:wjts:746217278604836876>')
+    }
+
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     let profileData;
