@@ -22,7 +22,12 @@ module.exports = async (Discord, client, message) => {
 
     if (message.author.id === '692851547062665317') {
         message.channel.send('stfu redlotus go play terraria');
-        message.react('<:ssk:746587001431785554>')
+        message.react('<:ssk:746587001431785554>');
+        message.react('<:ssk2:769428718593507338>');
+        message.react('<:ssk3:774835067502985237>');
+        message.react('<:sskbeard:850908039485063169>');
+        message.react('<:ssk6:868622638405271612>');
+        message.react('<a:sskbeard_pat:853775990635757579>');
     }
 
     if (!message.content.startsWith(prefix) || message.author.bot) return;
