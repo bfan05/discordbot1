@@ -20,6 +20,11 @@ module.exports = async (Discord, client, message) => {
         message.react('<:wjts:746217278604836876>')
     }
 
+    if (message.author.id === '692851547062665317') {
+        message.channel.send('stfu redlotus go play terraria');
+        message.delete(1000);
+    }
+
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     let profileData;
