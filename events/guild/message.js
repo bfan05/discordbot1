@@ -20,7 +20,7 @@ module.exports = async (Discord, client, message) => {
         message.react('<:wjts:746217278604836876>')
     }
 
-    if (message.author.id === '692851547062665317') {
+    if (message.author.id === '455171049173286923') {
         message.channel.send('stfu redlotus go play terraria');
         message.react('<:ssk:746587001431785554>');
         message.react('<:ssk2:769428718593507338>');
