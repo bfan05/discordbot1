@@ -4,7 +4,7 @@ module.exports = {
     name: 'leaderboard',
     aliases: ['lb'],
     permissions: [],
-    description: 'Check the TMC Cash leaderboard!',
+    description: 'Check the TMA Cash leaderboard!',
     
     async execute(client, message, args, Discord, profileData) {
         profileModel.find().sort([

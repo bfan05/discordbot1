@@ -4,9 +4,9 @@ module.exports = {
     name: 'reset',
     aliases: ['rs'],
     permissions: ['ADMINISTRATOR'],
-    description: "Reset someone's TMC Cash",
+    description: "Reset someone's TMA Cash",
     async execute(client, message, args, Discord, profileData) {
-        if (!args.length) return message.channel.send('You need to mention a member to reset their TMC Cash!');
+        if (!args.length) return message.channel.send('You need to mention a member to reset their TMA Cash!');
         const data = await profileModel.findOne({ userID: message.author.id });
         
         const target = message.mentions.users.first();
@@ -31,7 +31,7 @@ module.exports = {
                 },
             }
         );
-        message.channel.send(`**${target.username}**'s TMC Cash has been reset!`);
+        message.channel.send(`**${target.username}**'s TMA Cash has been reset!`);
         client.channels.cache.get('857330940631187526').send(`**${message.author.username} (${message.author.id})** reset **${target.username}'s (${target.id})** cash.`);
         client.channels.cache.get('857698338051588127').send(`**${message.author.username} (${message.author.id})** reset **${target.username}'s (${target.id})** cash.`);
     }

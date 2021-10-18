@@ -4,9 +4,9 @@ module.exports = {
     name: 'adtake',
     aliases: [],
     permissions: ["BAN_MEMBERS"],
-    description: 'Admins, take some TMC Cash from a member!',
+    description: 'Admins, take some TMA Cash from a member!',
     async execute(client, message, args, Discord, profileData) {
-        if (!args.length) return message.channel.send('You need to mention a member to take TMC Cash from them!');
+        if (!args.length) return message.channel.send('You need to mention a member to take TMA Cash from them!');
 
         const target = message.mentions.users.first();
         if (!target) return message.channel.send("That user does not exist!");
@@ -43,7 +43,7 @@ module.exports = {
                 },
             }
         );
-        message.channel.send(`**${message.author.username}** took **${amount.toLocaleString()}** TMC Cash from **${target.username}**. Boohoo!`);
+        message.channel.send(`**${message.author.username}** took **${amount.toLocaleString()}** TMA Cash from **${target.username}**. Boohoo!`);
         //client.channels.cache.get('857330940631187526').send(`**${message.author.username} (${message.author.id})** adtook **${amount.toLocaleString()}** from **${target.username} (${target.id})**.`);
         client.channels.cache.get('857698338051588127').send(`**${message.author.username} (${message.author.id})** adtook **${amount.toLocaleString()}** from **${target.username} (${target.id})**.`);
     }

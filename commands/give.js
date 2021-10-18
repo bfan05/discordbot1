@@ -4,9 +4,9 @@ module.exports = {
     name: 'give',
     aliases: ['send'],
     permissions: [],
-    description: 'Give a friend some TMC Cash!',
+    description: 'Give a friend some TMA Cash!',
     async execute(client, message, args, Discord, profileData) {
-        if (!args.length) return message.channel.send('You need to mention a member to give them TMC Cash!');
+        if (!args.length) return message.channel.send('You need to mention a member to give them TMA Cash!');
         const data = await profileModel.findOne({ userID: message.author.id });
 
         if (!args[1]) return message.channel.send('Please specify how much you want to give!');
@@ -21,7 +21,7 @@ module.exports = {
 
         if (target.id == message.author.id) {
             client.channels.cache.get('857330940631187526').send(`${target.username} sent **${amount.toLocaleString()}** themself.`);
-            message.channel.send(`**${target.username}** gave **${amount.toLocaleString()}** TMC Cash to themself...`);
+            message.channel.send(`**${target.username}** gave **${amount.toLocaleString()}** TMA Cash to themself...`);
             return;
         }
 
@@ -49,7 +49,7 @@ module.exports = {
                 },
             }
         );
-        message.channel.send(`**${message.author.username}** sent **${amount.toLocaleString()}** TMC Cash to **${target.username}**!`);
+        message.channel.send(`**${message.author.username}** sent **${amount.toLocaleString()}** TMA Cash to **${target.username}**!`);
         //client.channels.cache.get('857330940631187526').send(`**${message.author.username} (${message.author.id})** sent **${amount.toLocaleString()}** to **${target.username} (${target.id})**.`);
         client.channels.cache.get('857698338051588127').send(`**${message.author.username} (${message.author.id})** sent **${amount.toLocaleString()}** to **${target.username} (${target.id})**.`);
     }

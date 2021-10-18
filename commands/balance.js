@@ -6,7 +6,7 @@ module.exports = {
     execute(client, message, args, Discord, profileData) {
         const newEmbed = new Discord.MessageEmbed()
         .setColor('#9CCFE7')
-        .setAuthor(`${message.author.username}'s TMC Cash`, `${message.author.avatarURL({dynamic: true})}`)
+        .setAuthor(`${message.author.username}'s TMA Cash`, `${message.author.avatarURL({dynamic: true})}`)
         .setThumbnail('https://cdn.discordapp.com/emojis/857732279367761940.png?v=1')
         .addFields(
             {name: 'Wallet:', value: `${profileData.coins.toLocaleString()} 𝕋`},

@@ -5,7 +5,7 @@ module.exports = {
     aliases: [],
     cooldown: 172800,
     permissions: [],
-    description: 'Claim your daily TMC Cash!',
+    description: 'Claim your daily TMA Cash!',
     async execute(client, message, args, Discord, profileData) {
         const randomNumber = Math.floor(Math.random() * 26) + 25;
         const response = await profileModel.findOneAndUpdate(
@@ -19,7 +19,7 @@ module.exports = {
                 },
             }
         );
-        message.channel.send(`**${message.author.username}** you claimed your daily and received **${randomNumber}** TMC Cash!`);
+        message.channel.send(`**${message.author.username}** you claimed your daily and received **${randomNumber}** TMA Cash!`);
         //client.channels.cache.get('857330940631187526').send(`**${message.author.username} (${message.author.id})** earned **${randomNumber}** from claiming their daily.`);
         client.channels.cache.get('857698338051588127').send(`**${message.author.username} (${message.author.id})** earned **${randomNumber}** from claiming their daily.`);
     },

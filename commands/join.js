@@ -6,6 +6,6 @@ module.exports = {
     permissions: [],
     description: 'join the bot!',
     execute(client, message, args, Discord, profileModel) {
-        message.channel.send(`<@${message.author.id}>, thanks for joining **TMC Bot**!`);
+        message.channel.send(`<@${message.author.id}>, thanks for joining **TMA Bot**!`);
     }
 }
