@@ -61,7 +61,7 @@ module.exports = async (Discord, client, message) => {
         return message.channel.send('New features are being added to the bot! Please be patient, it will be back up soon.')
     }*/
 
-    if (message.author.id == '871175705415807028') {
+    if (message.author.id == '871175705415807028' || message.author.id == '755333897340059659') {
         return message.channel.send('You have been banned.');
     }
 
